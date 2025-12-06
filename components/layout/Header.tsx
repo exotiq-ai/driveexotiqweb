@@ -27,9 +27,11 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 relative z-50">
-              <span className="text-2xl font-display font-bold text-gulf-blue">
-                Drive Exotiq
-              </span>
+              <img 
+                src="/images/logos/drive-exotiq-logo.svg" 
+                alt="Drive Exotiq" 
+                className="h-8 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}

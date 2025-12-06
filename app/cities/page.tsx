@@ -108,7 +108,7 @@ export default function CitiesPage() {
             </h1>
             <p className="text-body-lg text-metallic-silver">
               Drive Exotiq is expanding to every major market in North America. Here's where
-              we're starting—and where we're headed.
+              we're starting, and where we're headed.
             </p>
           </div>
         </section>

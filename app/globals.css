@@ -83,4 +83,39 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-gulf-blue;
   }
+
+  /* Button Hover States */
+  .btn-primary {
+    @apply transition-all duration-200 hover:shadow-lg hover:shadow-gulf-blue/30 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply transition-all duration-200 hover:border-performance-orange hover:text-performance-orange;
+  }
+
+  /* Card Hover States */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gulf-blue/10;
+  }
+
+  /* Link Hover States */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Focus States for Accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-gulf-blue;
+  }
+
+  /* Mobile optimizations */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
 }

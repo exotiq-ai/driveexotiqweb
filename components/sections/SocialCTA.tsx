@@ -43,7 +43,7 @@ export default function SocialCTA() {
         {/* Social Proof */}
         <div className="mt-12 pt-8 border-t border-metallic-silver/20">
           <p className="text-body-sm text-metallic-silver">
-            Join thousands of automotive enthusiasts experiencing exotic driving nationwide
+            Join the community redefining exotic car experiences
           </p>
         </div>
       </div>

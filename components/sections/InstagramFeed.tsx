@@ -56,7 +56,7 @@ export default function InstagramFeed() {
             Join Our Community on Instagram
           </h2>
           <p className="text-body text-metallic-silver max-w-2xl mx-auto mb-8">
-            See the latest from Drive Exotiq—exotic experiences, community events, 
+            See the latest from Drive Exotiq: exotic experiences, community events, 
             and behind-the-scenes moments from our members.
           </p>
           <a

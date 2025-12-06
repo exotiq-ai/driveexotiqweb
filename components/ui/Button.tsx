@@ -26,8 +26,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             'border-2 border-white/20 text-pure-white bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-gulf-blue/50 hover:text-gulf-blue active:bg-white/5 hover:shadow-lg hover:shadow-gulf-blue/20':
               variant === 'outline',
 
-            // Sizes - Optimized for touch with refined padding
-            'px-6 py-3 text-[15px] min-h-[44px] tracking-wide': size === 'sm',
+            // Sizes - Optimized for touch with refined padding (48px minimum for accessibility)
+            'px-6 py-3 text-[15px] min-h-[48px] tracking-wide': size === 'sm',
             'px-8 py-4 text-[17px] min-h-[52px] tracking-wide': size === 'md',
             'px-10 py-5 text-[19px] min-h-[56px] tracking-wide': size === 'lg',
           },

@@ -14,7 +14,7 @@ export default function HowItWorksPage() {
   const steps = [
     {
       title: 'Submit Your Application',
-      content: 'You fill out a quick application with your details—name, location, driving interests, and which cities you want to rent in. Optional invite code if you were referred by an existing member.',
+      content: 'You fill out a quick application with your details: name, location, driving interests, and which cities you want to rent in. Optional invite code if you were referred by an existing member.',
       checks: [
         'Driving record (clean is preferred)',
         'Insurance verification',
@@ -25,7 +25,7 @@ export default function HowItWorksPage() {
     },
     {
       title: 'Get Vetted',
-      content: 'We use machine learning and API integrations to verify your information instantly. You get a renter profile score that operators can review—transparent, fair, and fast.',
+      content: 'We use machine learning and API integrations to verify your information instantly. You get a renter profile score that operators can review. Transparent, fair, and fast.',
       checks: [
         'Risk assessment score',
         'Verified driving history',
@@ -44,7 +44,7 @@ export default function HowItWorksPage() {
         'Porsche 911 GT3, Turbo S',
         'Bentley, Rolls-Royce, and more',
       ],
-      timeline: 'See the full daily rate upfront—no hidden fees, no surprises.',
+      timeline: 'See the full daily rate upfront. No hidden fees, no surprises.',
     },
     {
       title: 'Book Your Experience',

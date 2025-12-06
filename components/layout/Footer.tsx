@@ -61,13 +61,19 @@ export default function Footer() {
           {/* Investor Inquiries */}
           <div>
             <h4 className="text-pure-white font-semibold mb-4">Investors</h4>
-            <p className="text-metallic-silver text-sm mb-3">
-              Join our $2.5M Pre-Seed round
+            <p className="text-metallic-silver text-sm mb-4">
+              Exploring our $2.5M Pre-Seed round?
             </p>
-            <Link href="/investors" className="text-gulf-blue hover:text-gulf-blue/80 transition-colors text-sm font-medium block mb-2">
-              Investment Opportunity →
+            <Link 
+              href="/investors" 
+              className="text-gulf-blue hover:text-gulf-blue/80 transition-colors text-sm flex items-center gap-2 mb-2"
+            >
+              Investment Opportunity
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
-            <a href="mailto:hello@exotiq.ai" className="text-metallic-silver hover:text-gulf-blue transition-colors text-sm">
+            <a href="mailto:hello@exotiq.ai" className="text-metallic-silver hover:text-pure-white transition-colors text-sm block">
               hello@exotiq.ai
             </a>
           </div>

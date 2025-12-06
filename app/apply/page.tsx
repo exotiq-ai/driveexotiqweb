@@ -61,7 +61,7 @@ export default function ApplyPage() {
                     Get Started
                   </h2>
                   <p className="text-body text-metallic-silver mb-8">
-                    This is a quick process—most applications reviewed within 24-48 hours. We use
+                    This is a quick process. Most applications reviewed within 24-48 hours. We use
                     AI-powered verification to check your information instantly while maintaining
                     high standards.
                   </p>
