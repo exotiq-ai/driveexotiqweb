@@ -31,9 +31,9 @@ export default function Header() {
               <Image 
                 src="/images/logos/drive-exotiq-logo.svg" 
                 alt="Drive Exotiq" 
-                width={150}
-                height={32}
-                className="h-8 w-auto"
+                width={200}
+                height={48}
+                className="h-12 md:h-16 w-auto"
                 priority
                 unoptimized
               />

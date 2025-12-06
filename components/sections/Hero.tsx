@@ -14,6 +14,7 @@ export default function Hero() {
           className="object-cover brightness-[0.3]"
           priority
           sizes="100vw"
+          unoptimized
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-deep-black via-midnight-blue/50 to-deep-black opacity-80" />
