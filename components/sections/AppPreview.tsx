@@ -36,11 +36,11 @@ export default function AppPreview() {
                 <Image 
                   src="/images/app/app-home.png" 
                   alt="Drive Exotiq App - Search Screen"
-                  width={280}
-                  height={600}
+                  width={652}
+                  height={1314}
                   className="w-full h-auto"
                   loading="lazy"
-                  quality={90}
+                  quality={85}
                 />
               </div>
             </div>
@@ -61,11 +61,11 @@ export default function AppPreview() {
                 <Image 
                   src="/images/app/app-detail.png" 
                   alt="Drive Exotiq App - Car Detail"
-                  width={280}
-                  height={600}
+                  width={660}
+                  height={1310}
                   className="w-full h-auto"
                   loading="lazy"
-                  quality={90}
+                  quality={85}
                 />
               </div>
             </div>
@@ -85,11 +85,11 @@ export default function AppPreview() {
                 <Image 
                   src="/images/app/app-splash.png" 
                   alt="Drive Exotiq App - Brand"
-                  width={280}
-                  height={600}
+                  width={744}
+                  height={1456}
                   className="w-full h-auto"
                   loading="lazy"
-                  quality={90}
+                  quality={85}
                 />
               </div>
             </div>
