@@ -40,7 +40,7 @@ export default function AppPreview() {
                   height={1314}
                   className="w-full h-auto"
                   loading="lazy"
-                  quality={85}
+                  unoptimized
                 />
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function AppPreview() {
                   height={1310}
                   className="w-full h-auto"
                   loading="lazy"
-                  quality={85}
+                  unoptimized
                 />
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function AppPreview() {
                   height={1456}
                   className="w-full h-auto"
                   loading="lazy"
-                  quality={85}
+                  unoptimized
                 />
               </div>
             </div>

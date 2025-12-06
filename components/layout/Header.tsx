@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Button from '@/components/ui/Button';
 
@@ -27,10 +28,14 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 relative z-50">
-              <img 
+              <Image 
                 src="/images/logos/drive-exotiq-logo.svg" 
                 alt="Drive Exotiq" 
+                width={150}
+                height={32}
                 className="h-8 w-auto"
+                priority
+                unoptimized
               />
             </Link>
 
