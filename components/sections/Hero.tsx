@@ -8,8 +8,8 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1621847739473-3ce3e980b08e"
-          alt="Exotic supercar in motion"
+          src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b"
+          alt="Exotic Bugatti supercar"
           fill
           className="object-cover brightness-[0.3]"
           priority
