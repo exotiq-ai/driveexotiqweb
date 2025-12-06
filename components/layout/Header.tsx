@@ -26,14 +26,23 @@ export default function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-deep-black/80 backdrop-blur-xl border-b border-white/10 supports-[backdrop-filter]:bg-deep-black/60">
         <nav className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2 relative z-50">
+            {/* Logo - Icon + Text */}
+            <Link href="/" className="flex items-center gap-3 relative z-50">
+              {/* D Icon */}
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex-shrink-0">
+                <img
+                  src="/images/logos/blue-d-icon.svg"
+                  alt="Drive Exotiq Icon"
+                  className="w-full h-full"
+                />
+              </div>
+              {/* Text Logo */}
               <Image 
                 src="/images/logos/drive-exotiq-logo.svg" 
                 alt="Drive Exotiq" 
-                width={200}
-                height={48}
-                className="h-12 md:h-16 w-auto"
+                width={180}
+                height={40}
+                className="h-8 md:h-10 lg:h-12 w-auto"
                 priority
                 unoptimized
               />
