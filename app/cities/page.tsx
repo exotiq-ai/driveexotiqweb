@@ -35,7 +35,7 @@ export default function CitiesPage() {
         'Winter driving experiences',
       ],
       launchEvent: 'December 12, 2025',
-      image: 'https://images.unsplash.com/photo-1542282088-fe8426682b8f?w=1200&q=90',
+      image: '/images/cars/R8-telluride.jpg',
       available: true,
     },
     {

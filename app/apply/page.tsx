@@ -43,8 +43,8 @@ export default function ApplyPage() {
             </h1>
             <p className="text-body-lg text-metallic-silver">
               Access to the best exotic rental experiences starts here. Submit your application
-              and get vetted to unlock curated operators, exclusive events, and the world's most
-              thrilling vehicles.
+              and join an exclusive community of curated operators, private events, and the world's most
+              thrilling vehicles. VIP treatment awaits.
             </p>
           </div>
         </section>

@@ -24,15 +24,15 @@ export default function HowItWorksPage() {
       timeline: 'Most applications reviewed within 24-48 hours.',
     },
     {
-      title: 'Get Vetted',
-      content: 'We use machine learning and API integrations to verify your information instantly. You get a renter profile score that operators can review. Transparent, fair, and fast.',
+      title: 'Join the Community',
+      content: 'Our AI-powered verification instantly confirms your credentials—giving you VIP access in minutes, not days. Your profile is transparent and fair, showing operators you\'re part of an exclusive community of verified enthusiasts.',
       checks: [
-        'Risk assessment score',
+        'Instant verification with AI',
         'Verified driving history',
-        'Insurance status',
+        'Insurance status confirmed',
         'Member since date',
       ],
-      timeline: 'You\'re approved and gain access to the Drive Exotiq marketplace.',
+      timeline: 'You\'re approved and gain exclusive access to the Drive Exotiq marketplace.',
     },
     {
       title: 'Browse Vetted Operators',

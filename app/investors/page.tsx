@@ -52,7 +52,7 @@ export default function InvestorsPage() {
     {
       name: 'Gregory Ringler',
       title: 'Founder & CEO',
-      description: 'Former Turo Power Host and luxury fleet operator with Apple and Maserati experience',
+      description: '15+ years leadership experience in 5-star hospitality, premium brands, and automotive innovation',
       image: '/images/team/gregory-ringler.jpg',
     },
     {

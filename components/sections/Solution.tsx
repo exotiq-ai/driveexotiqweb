@@ -41,9 +41,24 @@ export default function Solution() {
           technology and old-school passion.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {features.map((feature, index) => (
+        {/* Top 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {features.slice(0, 3).map((feature, index) => (
             <Card key={index} hover>
+              <h3 className="text-h3 text-pure-white mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-body-sm text-metallic-silver">
+                {feature.description}
+              </p>
+            </Card>
+          ))}
+        </div>
+
+        {/* Bottom 2 cards centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
+          {features.slice(3).map((feature, index) => (
+            <Card key={index + 3} hover>
               <h3 className="text-h3 text-pure-white mb-3">
                 {feature.title}
               </h3>
