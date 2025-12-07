@@ -1,24 +1,12 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import HeroVideo from '@/components/sections/HeroVideo';
 
 export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b"
-          alt="Exotic Bugatti supercar"
-          fill
-          className="object-cover brightness-[0.3]"
-          priority
-          sizes="100vw"
-          unoptimized
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-black via-midnight-blue/50 to-deep-black opacity-80" />
-      </div>
+      {/* Background Video/Image */}
+      <HeroVideo />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20">

@@ -21,10 +21,10 @@ export default function AppPreview() {
         </p>
 
         {/* iPhone Mockups - 3 Screenshots Side by Side */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto md:items-start">
           
           {/* Mockup 1 - Home/Search Screen */}
-          <div className="relative">
+          <div className="relative flex flex-col">
             {/* iPhone Frame */}
             <div className="relative mx-auto" style={{ width: '280px' }}>
               {/* Notch */}
@@ -46,7 +46,7 @@ export default function AppPreview() {
             </div>
             {/* Feature Label */}
             <div className="text-center mt-6">
-              <h3 className="text-lg font-semibold text-pure-white mb-2">Instant Search</h3>
+              <h3 className="text-lg font-semibold text-pure-white mb-2 min-h-[28px] flex items-center justify-center">Instant Search</h3>
               <p className="text-sm text-metallic-silver">
                 Find your dream car by make, model, city, or dates. Real-time availability.
               </p>
@@ -54,7 +54,7 @@ export default function AppPreview() {
           </div>
 
           {/* Mockup 2 - Car Detail Screen */}
-          <div className="relative">
+          <div className="relative flex flex-col">
             <div className="relative mx-auto" style={{ width: '280px' }}>
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-deep-black rounded-b-3xl z-10"></div>
               <div className="relative rounded-[3rem] overflow-hidden border-4 border-graphite bg-deep-black shadow-2xl shadow-gulf-blue/20">
@@ -70,7 +70,7 @@ export default function AppPreview() {
               </div>
             </div>
             <div className="text-center mt-6">
-              <h3 className="text-lg font-semibold text-pure-white mb-2">Transparent Pricing</h3>
+              <h3 className="text-lg font-semibold text-pure-white mb-2 min-h-[28px] flex items-center justify-center">Transparent Pricing</h3>
               <p className="text-sm text-metallic-silver">
                 See the total cost upfront. No hidden fees, no surprises.
               </p>
@@ -78,7 +78,7 @@ export default function AppPreview() {
           </div>
 
           {/* Mockup 3 - Splash/Brand Screen */}
-          <div className="relative">
+          <div className="relative flex flex-col">
             <div className="relative mx-auto" style={{ width: '280px' }}>
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-deep-black rounded-b-3xl z-10"></div>
               <div className="relative rounded-[3rem] overflow-hidden border-4 border-graphite bg-deep-black shadow-2xl shadow-gulf-blue/20">
@@ -94,7 +94,7 @@ export default function AppPreview() {
               </div>
             </div>
             <div className="text-center mt-6">
-              <h3 className="text-lg font-semibold text-pure-white mb-2">Event Access</h3>
+              <h3 className="text-lg font-semibold text-pure-white mb-2 min-h-[28px] flex items-center justify-center">Event Access</h3>
               <p className="text-sm text-metallic-silver">
                 First to know about exclusive gatherings, drives, and community experiences.
               </p>
@@ -102,9 +102,9 @@ export default function AppPreview() {
           </div>
         </div>
 
-        {/* App Store Badges - Greyed Out "Coming Soon" */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16">
-          <div className="relative opacity-40 grayscale">
+        {/* App Store Badges - Subtle Disabled Look */}
+        <div className="flex flex-col items-center justify-center mt-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-50">
             <Image 
               src="/images/app-store-badge.svg" 
               alt="Download on App Store - Coming Soon"
@@ -113,13 +113,6 @@ export default function AppPreview() {
               className="h-12 w-auto"
               loading="lazy"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-xs font-semibold text-pure-white bg-graphite px-3 py-1 rounded-full">
-                Coming Q1 2026
-              </span>
-            </div>
-          </div>
-          <div className="relative opacity-40 grayscale">
             <Image 
               src="/images/google-play-badge.svg" 
               alt="Get it on Google Play - Coming Soon"
@@ -128,12 +121,10 @@ export default function AppPreview() {
               className="h-12 w-auto"
               loading="lazy"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-xs font-semibold text-pure-white bg-graphite px-3 py-1 rounded-full">
-                Coming Q1 2026
-              </span>
-            </div>
           </div>
+          <p className="text-sm text-metallic-silver mt-4">
+            Coming Q1 2026
+          </p>
         </div>
       </div>
     </section>

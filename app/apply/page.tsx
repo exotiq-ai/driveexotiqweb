@@ -4,6 +4,8 @@ import ApplicationForm from '@/components/forms/ApplicationForm';
 import Card from '@/components/ui/Card';
 import { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Apply | Drive Exotiq',
   description: 'Join the Drive Exotiq community. Submit your application and get vetted to access curated exotic rental experiences.',

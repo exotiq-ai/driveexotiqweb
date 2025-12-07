@@ -59,13 +59,13 @@ export default function InvestorsPage() {
       name: 'Nikola Javić',
       title: 'Fractional CTO, Ars Futura',
       description: 'Proven AI/ML engineering leader behind multiple SaaS unicorns',
-      image: null,
+      image: '/images/team/nikola-javic.jpg',
     },
     {
       name: 'Arthur Woods',
       title: 'Strategic Advisor',
       description: 'Serial entrepreneur with two exits. Founder of 1080 Ventures',
-      image: null,
+      image: '/images/team/arthur-woods.jpg',
     },
     {
       name: 'Mike Looney',

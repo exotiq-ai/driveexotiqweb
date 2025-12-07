@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabase-admin';
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
+
+// Force dynamic rendering to prevent build-time errors
+export const dynamic = 'force-dynamic';
 
 // Simple auth check
 function checkAuth(request: NextRequest) {
@@ -52,6 +55,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    const supabaseAdmin = getSupabaseAdmin();
     const { data, error } = await supabaseAdmin
       .from('instagram_posts')
       .select('*')
@@ -91,6 +95,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid Instagram URL' }, { status: 400 });
     }
 
+    const supabaseAdmin = getSupabaseAdmin();
     const { data, error } = await supabaseAdmin
       .from('instagram_posts')
       .insert({
@@ -137,6 +142,7 @@ export async function PATCH(request: NextRequest) {
     if (typeof display_order !== 'undefined') updates.display_order = display_order;
     if (typeof caption !== 'undefined') updates.caption = caption;
 
+    const supabaseAdmin = getSupabaseAdmin();
     const { data, error } = await supabaseAdmin
       .from('instagram_posts')
       .update(updates)
@@ -170,6 +176,7 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: 'Post ID is required' }, { status: 400 });
     }
 
+    const supabaseAdmin = getSupabaseAdmin();
     const { error } = await supabaseAdmin
       .from('instagram_posts')
       .delete()
