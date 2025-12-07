@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 interface LogoProps {
   className?: string;
@@ -14,6 +13,7 @@ export default function Logo({ className = '', href = '/' }: LogoProps) {
       aria-label="Drive Exotiq - Home"
     >
       {/* D Icon - Responsive sizing with perfect aspect ratio */}
+      {/* Using regular img tag for SVG to prevent Next.js optimization issues in production */}
       <div className="relative flex-shrink-0
         w-8 h-8 
         sm:w-9 sm:h-9 
@@ -21,14 +21,14 @@ export default function Logo({ className = '', href = '/' }: LogoProps) {
         lg:w-12 lg:h-12 
         xl:w-14 xl:h-14
         2xl:w-16 2xl:h-16">
-        <Image
+        <img
           src="/images/logos/blue-d-icon.svg"
           alt=""
-          width={64}
-          height={64}
           className="w-full h-full object-contain"
-          priority
+          loading="eager"
+          decoding="async"
           aria-hidden="true"
+          style={{ display: 'block' }}
         />
       </div>
 
