@@ -48,22 +48,9 @@ export default function Logo({ className = '', href = '/' }: LogoProps) {
         {/* Space between words - responsive */}
         <span className="w-1 sm:w-1.5 md:w-2 lg:w-2.5" aria-hidden="true" />
         
-        {/* Exotiq - White with square dot */}
+        {/* Exotiq - White */}
         <span className="font-display font-bold text-pure-white tracking-tight-exotiq whitespace-nowrap">
-          Exot
-          <span className="relative inline-block">
-            i
-            {/* Square dot - positioned above the i, replacing default dot */}
-            <span 
-              className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[0.2em] bg-pure-white block"
-              style={{
-                width: '0.4em',
-                height: '0.4em',
-              }}
-              aria-hidden="true"
-            />
-          </span>
-          q
+          Exotiq
         </span>
       </div>
     </Link>
