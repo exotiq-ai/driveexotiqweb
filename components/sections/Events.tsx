@@ -12,7 +12,7 @@ export default function Events() {
       date: 'December 12, 2025',
       location: 'Exclusive Denver Location',
       description: 'Join us for an intimate gathering of exotic car enthusiasts. Coffee. Networking. Car talk. Followed by a guided drive through Colorado\'s most scenic mountain roads.',
-      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=90',
+      image: '/images/events/denver-event.jpg',
       featured: true,
     },
     {

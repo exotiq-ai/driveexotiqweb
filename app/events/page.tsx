@@ -39,10 +39,11 @@ export default function EventsPage() {
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="relative h-64 md:h-full rounded-lg overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=90"
-                    alt="Denver mountains with exotic cars"
+                    src="/images/events/denver-event.jpg"
+                    alt="Audi S8 in desert landscape - Drive Exotiq Denver event"
                     fill
                     className="object-cover"
+                    priority
                   />
                 </div>
                 <div className="flex flex-col justify-between">
