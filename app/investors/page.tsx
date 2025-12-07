@@ -280,6 +280,7 @@ export default function InvestorsPage() {
                           width={112}
                           height={112}
                           className="object-cover"
+                          unoptimized
                         />
                       </div>
                     ) : (

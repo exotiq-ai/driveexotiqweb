@@ -44,6 +44,7 @@ export default function EventsPage() {
                     fill
                     className="object-cover"
                     priority
+                    unoptimized
                   />
                 </div>
                 <div className="flex flex-col justify-between">
