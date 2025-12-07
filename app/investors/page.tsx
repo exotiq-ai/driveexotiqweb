@@ -71,7 +71,7 @@ export default function InvestorsPage() {
       name: 'Mike Looney',
       title: 'Strategic Advisor',
       description: 'Exited founder at 1080 Ventures and SaaS growth strategist',
-      image: null,
+      image: '/images/team/mike-looney.jpg',
     },
   ];
 
