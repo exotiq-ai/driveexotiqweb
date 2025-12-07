@@ -12,7 +12,7 @@ export default function FinalCTA() {
         </h2>
 
         <p className="text-body-lg text-metallic-silver mb-10">
-          Join the Drive Exotiq community. Get vetted. Access the best exotic rental
+          Join the Drive Exotiq community. Gain VIP access. Experience the best exotic rental
           experiences on the planet.
         </p>
 

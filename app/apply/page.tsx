@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Apply | Drive Exotiq',
-  description: 'Join the Drive Exotiq community. Submit your application and get vetted to access curated exotic rental experiences.',
+  description: 'Join the Drive Exotiq community. Submit your application and gain VIP access to curated exotic rental experiences.',
 };
 
 export default function ApplyPage() {
