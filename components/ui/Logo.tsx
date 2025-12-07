@@ -1,0 +1,72 @@
+import Link from 'next/link';
+import Image from 'next/image';
+
+interface LogoProps {
+  className?: string;
+  href?: string;
+}
+
+export default function Logo({ className = '', href = '/' }: LogoProps) {
+  return (
+    <Link 
+      href={href} 
+      className={`flex items-center gap-2 sm:gap-2.5 md:gap-3 lg:gap-3.5 relative z-50 group transition-opacity duration-200 hover:opacity-90 ${className}`}
+      aria-label="Drive Exotiq - Home"
+    >
+      {/* D Icon - Responsive sizing with perfect aspect ratio */}
+      <div className="relative flex-shrink-0
+        w-8 h-8 
+        sm:w-9 sm:h-9 
+        md:w-10 md:h-10 
+        lg:w-12 lg:h-12 
+        xl:w-14 xl:h-14
+        2xl:w-16 2xl:h-16">
+        <Image
+          src="/images/logos/blue-d-icon.svg"
+          alt=""
+          width={64}
+          height={64}
+          className="w-full h-full object-contain"
+          priority
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Text Logo - Expert typography with perfect spacing */}
+      <div className="flex items-baseline leading-none
+        text-base 
+        sm:text-lg 
+        md:text-xl 
+        lg:text-2xl 
+        xl:text-3xl
+        2xl:text-[34px]">
+        {/* Drive - Gulf Blue */}
+        <span className="font-display font-bold text-gulf-blue tracking-tight-exotiq whitespace-nowrap">
+          Drive
+        </span>
+        
+        {/* Space between words - responsive */}
+        <span className="w-1 sm:w-1.5 md:w-2 lg:w-2.5" aria-hidden="true" />
+        
+        {/* Exotiq - White with square dot */}
+        <span className="font-display font-bold text-pure-white tracking-tight-exotiq whitespace-nowrap">
+          Exot
+          <span className="relative inline-block">
+            i
+            {/* Square dot - positioned above the i, replacing default dot */}
+            <span 
+              className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[0.2em] bg-pure-white block"
+              style={{
+                width: '0.4em',
+                height: '0.4em',
+              }}
+              aria-hidden="true"
+            />
+          </span>
+          q
+        </span>
+      </div>
+    </Link>
+  );
+}
+
