@@ -40,9 +40,10 @@ export default function EventsPage() {
                 <div className="relative h-64 md:h-full rounded-lg overflow-hidden">
                   <Image
                     src="/images/events/denver-event.jpg"
-                    alt="Audi S8 in desert landscape - Drive Exotiq Denver event"
+                    alt="Audi R8 in Telluride - Drive Exotiq Denver event"
                     fill
                     className="object-cover"
+                    style={{ objectPosition: 'left center' }}
                     priority
                     unoptimized
                   />

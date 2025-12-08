@@ -56,6 +56,7 @@ export default function Events() {
                     alt={event.name}
                     fill
                     className="object-cover"
+                    style={{ objectPosition: event.featured ? 'left center' : 'center' }}
                     unoptimized
                   />
                 </div>
