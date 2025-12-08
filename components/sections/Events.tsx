@@ -36,7 +36,7 @@ export default function Events() {
   ];
 
   return (
-    <section className="py-24 bg-jet-grey">
+    <section className="py-24 lg:py-32 xl:py-40 bg-jet-grey">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-caption text-gulf-blue mb-4 text-center">
           UPCOMING EVENTS
@@ -50,7 +50,7 @@ export default function Events() {
           {events.map((event, index) => (
             <Card key={index} hover className={event.featured ? 'lg:col-span-3' : ''}>
               <div className={`grid ${event.featured ? 'md:grid-cols-2 gap-6' : 'grid-cols-1'}`}>
-                <div className="relative h-48 md:h-full rounded-lg overflow-hidden">
+                <div className="relative h-56 md:h-full rounded-lg overflow-hidden">
                   <Image
                     src={event.image}
                     alt={event.name}

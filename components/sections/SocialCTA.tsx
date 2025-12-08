@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button';
 
 export default function SocialCTA() {
   return (
-    <section className="py-20 bg-midnight-blue relative overflow-hidden">
+    <section className="py-20 lg:py-28 xl:py-32 bg-midnight-blue relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-br from-gulf-blue/5 to-transparent" />
       

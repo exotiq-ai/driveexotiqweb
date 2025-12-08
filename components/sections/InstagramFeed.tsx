@@ -47,7 +47,7 @@ export default function InstagramFeed() {
   }
 
   return (
-    <section className="py-20 bg-jet-grey">
+    <section className="py-20 lg:py-28 xl:py-32 bg-jet-grey">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-12">

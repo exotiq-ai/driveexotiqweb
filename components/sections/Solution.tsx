@@ -25,7 +25,7 @@ export default function Solution() {
   ];
 
   return (
-    <section className="py-24 bg-deep-black">
+    <section className="py-24 lg:py-32 xl:py-40 bg-deep-black">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-caption text-gulf-blue mb-4 text-center">
           THE DRIVE EXOTIQ DIFFERENCE

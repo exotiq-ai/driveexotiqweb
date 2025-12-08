@@ -32,16 +32,14 @@ export default function Problem() {
   ];
 
   return (
-    <section className="py-24 bg-jet-grey">
+    <section className="py-24 lg:py-32 xl:py-40 bg-jet-grey">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-caption text-gulf-blue mb-4 text-center">
           WHY DRIVE EXOTIQ EXISTS
         </p>
 
         <h2 className="text-h2 text-pure-white mb-8 text-center max-w-4xl mx-auto">
-          Turo Abandoned Exotic Car Enthusiasts.
-          <br />
-          We're Here to Fix It.
+          Turo Abandoned Exotic Cars. We're Here to Fix It.
         </h2>
 
         <div className="max-w-4xl mx-auto mb-16">
