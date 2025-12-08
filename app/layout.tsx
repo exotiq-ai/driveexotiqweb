@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Drive Exotiq - Where Precision Meets Passion",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Drive Exotiq | Where Precision Meets Passion",
     description: "The exotic car community built by enthusiasts, for enthusiasts. Vetted drivers. Curated experiences. Zero compromises.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
     creator: "@driveexotiq",
     site: "@driveexotiq",
   },
