@@ -43,7 +43,7 @@ export default function EventsPage() {
                     alt="Audi R8 in Telluride - Drive Exotiq Denver event"
                     fill
                     className="object-cover"
-                    style={{ objectPosition: 'left center' }}
+                    style={{ objectPosition: 'center center' }}
                     priority
                     unoptimized
                   />
