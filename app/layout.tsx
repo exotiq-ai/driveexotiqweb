@@ -25,16 +25,27 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Drive Exotiq | Where Precision Meets Passion",
-    description: "The exotic car community built by enthusiasts, for enthusiasts.",
+    description: "The exotic car community built by enthusiasts, for enthusiasts. Vetted drivers. Curated experiences. Zero compromises.",
     url: "https://driveexotiq.com",
     siteName: "Drive Exotiq",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Drive Exotiq - Where Precision Meets Passion",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Drive Exotiq | Where Precision Meets Passion",
-    description: "The exotic car community built by enthusiasts, for enthusiasts.",
+    description: "The exotic car community built by enthusiasts, for enthusiasts. Vetted drivers. Curated experiences. Zero compromises.",
+    images: ["/og-image.jpg"],
+    creator: "@driveexotiq",
+    site: "@driveexotiq",
   },
 };
 
