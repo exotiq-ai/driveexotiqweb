@@ -56,6 +56,7 @@ export default function Events() {
                     alt={event.name}
                     fill
                     className="object-cover"
+                    unoptimized
                   />
                 </div>
                 <div className="flex flex-col justify-between">
