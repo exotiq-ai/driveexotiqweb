@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AppPreview() {
   return (
-    <section className="py-24 md:py-32 bg-jet-grey">
+    <section className="py-20 lg:py-24 bg-jet-grey">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Label */}
         <p className="text-caption text-performance-orange mb-4 text-center">
@@ -103,7 +103,7 @@ export default function AppPreview() {
         </div>
 
         {/* App Store Badges - Subtle Disabled Look */}
-        <div className="flex flex-col items-center justify-center mt-16">
+        <div className="flex flex-col items-center justify-center mt-12">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-50">
             <Image 
               src="/images/app-store-badge.svg" 
