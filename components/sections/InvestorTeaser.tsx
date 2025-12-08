@@ -29,9 +29,8 @@ export default function InvestorTeaser() {
         </p>
 
         {/* Headline */}
-        <h2 className="text-h2 text-pure-white mb-6 text-center max-w-4xl mx-auto">
-          We're Not Just Connecting Drivers to Cars.
-          <br />
+        <h2 className="text-h2 text-pure-white mb-6 text-center max-w-5xl mx-auto">
+          We're Not Just Connecting Drivers to Cars.<br />
           <span className="text-gulf-blue">We're Building Infrastructure for Premium Mobility.</span>
         </h2>
 
