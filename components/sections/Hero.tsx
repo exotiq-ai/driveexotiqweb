@@ -11,7 +11,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20">
         <h1 className="text-hero text-pure-white mb-6 fade-in-up">
-          Where Precision Meets Passion
+          Where Precision<br />Meets Passion
         </h1>
         <p className="text-body-lg text-metallic-silver mb-10 max-w-3xl mx-auto fade-in-up">
           The exotic car community built by enthusiasts, for enthusiasts. Vetted drivers. Curated experiences. Zero compromises.

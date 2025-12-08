@@ -39,7 +39,8 @@ export default function Problem() {
         </p>
 
         <h2 className="text-h2 text-pure-white mb-8 text-center max-w-4xl mx-auto">
-          Turo Abandoned Exotic Cars. We're Here to Fix It.
+          Turo Abandoned Exotic Cars.{' '}
+          <span className="whitespace-nowrap">We're Here to Fix It.</span>
         </h2>
 
         <div className="max-w-4xl mx-auto mb-16">
