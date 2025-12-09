@@ -12,39 +12,26 @@ export const metadata: Metadata = {
 };
 
 export default function InvestorsPage() {
-  const tractionMetrics = [
+  const impactMetrics = [
     {
-      stat: '30+',
-      label: 'Workflows Automated',
-      description: 'From instant guest replies to dynamic pricing and compliance checks',
+      stat: '$2.45B',
+      label: 'Serviceable Market',
+      description: 'Boutique and P2P operators need integrated tools',
     },
     {
       stat: '15+',
       label: 'Hours Saved Weekly',
-      description: 'Automated pricing, messaging, scheduling reduce manual workload',
+      description: 'Automated pricing, messaging, scheduling',
     },
     {
       stat: '>90%',
-      label: 'High Stickiness',
-      description: 'Operators would rely on Exotiq as their primary daily OS',
-    },
-  ];
-
-  const marketMetrics = [
-    {
-      number: '$13B+',
-      label: 'Total Addressable Market',
-      description: 'Rapidly growing U.S. luxury and specialty rental market',
+      label: 'Operator Stickiness',
+      description: 'Would rely on Exotiq as primary daily OS',
     },
     {
-      number: '$2.45B',
-      label: 'Serviceable Available Market',
-      description: 'Boutique and P2P operators need smarter, integrated tools',
-    },
-    {
-      number: '15.8%',
-      label: 'Market CAGR',
-      description: 'Explosive growth in luxury/exotic rental segment',
+      stat: '30+',
+      label: 'Workflows Automated',
+      description: 'Guest replies to compliance checks',
     },
   ];
 
@@ -130,129 +117,90 @@ export default function InvestorsPage() {
           </div>
         </section>
 
-        {/* The Opportunity - FOMO Builder */}
+        {/* Why Now - Streamlined Impact */}
         <section className="py-20 bg-jet-grey/30">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <p className="text-caption text-gulf-blue mb-4">THE OPPORTUNITY</p>
+            <div className="text-center mb-12">
+              <p className="text-caption text-gulf-blue mb-4">WHY NOW</p>
               <h2 className="text-h2 text-pure-white mb-6">
-                $2.45B in Operators Are Stuck in Fragmented Systems
+                The Market is Ready. The Product is Proven.
               </h2>
-              <p className="text-body-lg text-metallic-silver max-w-3xl mx-auto">
-                Exotic car operators waste <span className="text-performance-orange font-semibold">15+ hours per week</span> juggling 
-                five different systems, leaving <span className="text-performance-orange font-semibold">30% revenue on the table</span>. 
-                They're begging for a solution. We built it.
+              <p className="text-body-lg text-metallic-silver max-w-2xl mx-auto">
+                Early operators are seeing real results. Beta launching Q1 2026 across three cities.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {marketMetrics.map((metric, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+              {impactMetrics.map((metric, index) => (
                 <Card key={index} className="text-center bg-graphite/50 border-gulf-blue/20">
-                  <div className="text-5xl font-bold text-gulf-blue mb-4">
-                    {metric.number}
+                  <div className="text-4xl md:text-5xl font-bold text-gulf-blue mb-3">
+                    {metric.stat}
                   </div>
-                  <h3 className="text-h4 text-pure-white mb-3">
+                  <h3 className="text-lg font-semibold text-pure-white mb-2">
                     {metric.label}
                   </h3>
-                  <p className="text-body-sm text-metallic-silver">
+                  <p className="text-sm text-metallic-silver">
                     {metric.description}
                   </p>
                 </Card>
               ))}
             </div>
 
-            <div className="bg-midnight-blue/50 border border-gulf-blue/20 rounded-lg p-8 text-center">
+            <div className="text-center mb-10">
+              <a 
+                href="https://summary.exotiq.ai/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button variant="primary" size="md">
+                  See the Full Story →
+                </Button>
+              </a>
+            </div>
+
+            <div className="bg-midnight-blue/50 border border-gulf-blue/20 rounded-lg p-6 text-center max-w-3xl mx-auto">
               <p className="text-lg text-pure-white italic">
                 "We need an integrated system that actually understands how we work. Exotiq gets it."
               </p>
-              <p className="text-metallic-silver mt-3">
-                – Jay, Denver Exotic Rental Cars, Colorado
+              <p className="text-metallic-silver mt-2 text-sm">
+                – Jay, Denver Exotic Rental Cars
               </p>
             </div>
           </div>
         </section>
 
-        {/* Traction Proof Points */}
-        <section className="py-20 bg-deep-black">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <p className="text-caption text-performance-orange mb-4">PROVEN TRACTION</p>
-              <h2 className="text-h2 text-pure-white mb-6">
-                Early Validation Shows Exceptional Market Pull
-              </h2>
-              <p className="text-body-lg text-metallic-silver max-w-3xl mx-auto">
-                Our Command Center is already demonstrating strong product-market fit with early operators. 
-                Beta launching Q1 2026 across Denver, Scottsdale, and Miami.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {tractionMetrics.map((metric, index) => (
-                <Card key={index} className="text-center bg-jet-grey border-metallic-silver/30 hover:border-gulf-blue/50 transition-colors">
-                  <div className="text-5xl font-bold text-performance-orange mb-4">
-                    {metric.stat}
-                  </div>
-                  <h3 className="text-h4 text-pure-white mb-3">
-                    {metric.label}
-                  </h3>
-                  <p className="text-body-sm text-metallic-silver">
-                    {metric.description}
-                  </p>
-                </Card>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <p className="text-body text-gulf-blue font-semibold">
-                $180M+ fleet network designed • 5+ fragmented systems replaced by one platform
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Now / Competitive Moat */}
+        {/* Competitive Advantage - Streamlined */}
         <section className="py-20 bg-midnight-blue/30">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center mb-12">
               <p className="text-caption text-gulf-blue mb-4">COMPETITIVE ADVANTAGE</p>
-              <h2 className="text-h2 text-pure-white mb-6">
-                Turo Failed Exotic Operators. We're Purpose-Built for Them.
+              <h2 className="text-h2 text-pure-white mb-8">
+                Turo Failed Exotic Operators.<br />We're Purpose-Built for Them.
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <Card className="bg-graphite border-gulf-blue/30">
-                <div className="mb-4">
-                  <svg className="w-12 h-12 text-gulf-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
+            <div className="bg-graphite/50 border border-gulf-blue/20 rounded-lg p-8 md:p-10">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-2 h-2 bg-gulf-blue rounded-full mt-2"></div>
+                  <p className="text-body-lg text-pure-white">
+                    <span className="font-semibold text-gulf-blue">FleetCopilot™ AI</span> handles pricing, messaging, and maintenance 24/7
+                  </p>
                 </div>
-                <h3 className="text-h3 text-pure-white mb-3">FleetCopilot™ AI</h3>
-                <p className="text-body text-metallic-silver">
-                  AI handles dynamic pricing, instant guest communication, and predictive maintenance 24/7. 
-                  No more manual work. No more lost revenue.
-                </p>
-              </Card>
-
-              <Card className="bg-graphite border-gulf-blue/30">
-                <div className="mb-4">
-                  <svg className="w-12 h-12 text-gulf-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-2 h-2 bg-gulf-blue rounded-full mt-2"></div>
+                  <p className="text-body-lg text-pure-white">
+                    <span className="font-semibold text-performance-orange">No predatory commissions.</span> Operator-first SaaS model ($49-$199/month)
+                  </p>
                 </div>
-                <h3 className="text-h3 text-pure-white mb-3">Strategic Ecosystem</h3>
-                <p className="text-body text-metallic-silver">
-                  Integrated with Axle, Persona, and leading insurance platforms. 
-                  We're not just software. We're building the ecosystem layer that makes us indispensable.
-                </p>
-              </Card>
-            </div>
-
-            <div className="bg-deep-black/80 border border-performance-orange/30 rounded-lg p-6 text-center">
-              <p className="text-body-lg text-pure-white">
-                <span className="text-performance-orange font-bold">No predatory commissions.</span>
-                {' '}Operators keep their margins. Simple SaaS pricing: $49-$199/month + AI add-ons.
-              </p>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-2 h-2 bg-gulf-blue rounded-full mt-2"></div>
+                  <p className="text-body-lg text-pure-white">
+                    <span className="font-semibold text-gulf-blue">Strategic ecosystem:</span> Axle, Persona, insurance integrations
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
