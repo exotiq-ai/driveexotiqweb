@@ -208,3 +208,6 @@ If you run into issues:
 **Current:** Fallback image is showing (Bugatti from Unsplash)
 **Next:** Add optimized videos and test!
 
+
+
+

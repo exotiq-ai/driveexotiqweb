@@ -147,3 +147,6 @@ Your biggest risk isn't Turo - it's **execution at scale**. The curated/vetted a
 
 The key is that you're not just building a rental marketplace - you're building a **lifestyle brand for exotic car enthusiasts**. That's the right long-term play.
 
+
+
+

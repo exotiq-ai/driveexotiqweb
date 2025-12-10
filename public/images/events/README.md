@@ -20,3 +20,6 @@ Images in this folder are referenced in:
 
 All images will be automatically optimized by Next.js Image component.
 
+
+
+

@@ -57,3 +57,6 @@ Desktop:  48px height (h-12)
 - Gap spacing (gap-3) provides proper breathing room between icon and text
 - flex-shrink-0 on icon prevents unwanted scaling
 
+
+
+
