@@ -16,7 +16,7 @@ export default function Cities() {
         'Access to exclusive Rocky Mountain drives',
         'Community events starting Dec 12',
       ],
-      image: 'https://images.unsplash.com/photo-1542282088-fe8426682b8f?w=1200&q=90',
+      image: '/images/cars/R8-telluride.jpg',
       available: true,
     },
     {
@@ -67,6 +67,7 @@ export default function Cities() {
                   alt={city.name}
                   fill
                   className="object-cover"
+                  unoptimized
                 />
               </div>
 
