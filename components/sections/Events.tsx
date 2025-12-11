@@ -9,7 +9,7 @@ export default function Events() {
     {
       badge: 'INVITE ONLY',
       name: 'Drive Exotiq Denver Launch',
-      date: 'December 12, 2025',
+      date: 'December 13, 2025',
       location: 'Exclusive Denver Location',
       description: 'Join us for an intimate gathering of exotic car enthusiasts. Coffee. Networking. Car talk. Followed by a guided drive through Colorado\'s most scenic mountain roads.',
       image: '/images/events/denver-event.jpg',

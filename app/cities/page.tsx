@@ -34,7 +34,7 @@ export default function CitiesPage() {
         'Track day access (High Plains Raceway)',
         'Winter driving experiences',
       ],
-      launchEvent: 'December 12, 2025',
+      launchEvent: 'December 13, 2025',
       image: '/images/cars/R8-telluride.jpg',
       available: true,
     },

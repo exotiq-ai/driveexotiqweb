@@ -14,7 +14,7 @@ export default function Cities() {
         'Vetted local operators',
         'Lamborghini, Ferrari, McLaren, Porsche',
         'Access to exclusive Rocky Mountain drives',
-        'Community events starting Dec 12',
+        'Community events starting Dec 13',
       ],
       image: '/images/cars/R8-telluride.jpg',
       available: true,

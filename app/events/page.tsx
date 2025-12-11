@@ -51,7 +51,7 @@ export default function EventsPage() {
                 <div className="flex flex-col justify-between">
                   <div>
                     <Badge variant="orange" className="mb-4">
-                      INVITE ONLY • DECEMBER 12, 2025
+                      INVITE ONLY • DECEMBER 13, 2025
                     </Badge>
                     <h2 className="text-h2 text-pure-white mb-4">
                       Drive Exotiq Denver Launch
@@ -78,7 +78,7 @@ export default function EventsPage() {
                     <div className="bg-graphite/50 rounded-lg p-4 mb-6">
                       <h4 className="text-body font-semibold text-pure-white mb-2">Event Details:</h4>
                       <ul className="space-y-1 text-body-sm text-metallic-silver">
-                        <li><strong>Date:</strong> December 12, 2025</li>
+                        <li><strong>Date:</strong> December 13, 2025</li>
                         <li><strong>Time:</strong> TBD (Details coming soon)</li>
                         <li><strong>Location:</strong> Exclusive Denver location (Revealed upon registration)</li>
                         <li><strong>Duration:</strong> 2-3 hours total</li>
