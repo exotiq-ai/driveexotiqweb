@@ -14,7 +14,9 @@ export default function Hero() {
           Where Precision<br />Meets Passion
         </h1>
         <p className="text-body-lg text-metallic-silver mb-10 max-w-3xl mx-auto fade-in-up">
-          The exotic car community built by enthusiasts, for enthusiasts. Vetted drivers. Curated experiences. Zero compromises.
+          The exotic car community built by enthusiasts, for enthusiasts.
+          <br />
+          Vetted drivers. Curated experiences. Zero compromises.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in-up">
