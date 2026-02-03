@@ -40,20 +40,44 @@ const locationHours = [
 
 const faqs = [
   {
+    question: 'What are the age and license requirements?',
+    answer: 'Drivers must be at least 25 years old with a valid driver\'s license. A clean driving record is required. International drivers must have a valid license from their home country.',
+  },
+  {
+    question: 'What is included in the rental price?',
+    answer: 'All rentals include comprehensive insurance coverage, roadside assistance, and 24/7 customer support. Basic mileage is included. Additional options like delivery, extended hours, and extra mileage packages are available.',
+  },
+  {
     question: 'How do I book a vehicle?',
-    answer: 'Select your desired vehicle from the fleet, choose your dates, and complete the booking through our secure checkout system.',
-  },
-  {
-    question: 'What are the age requirements?',
-    answer: 'Drivers must be at least 25 years old with a valid driver\'s license and clean driving record.',
-  },
-  {
-    question: 'What is included in the rental?',
-    answer: 'All rentals include insurance, roadside assistance, and 24/7 support. Additional options like delivery and extended hours are available.',
+    answer: 'Browse our fleet, select your desired vehicle, choose your pickup and drop-off dates, and complete the booking through our secure checkout system. You\'ll receive a confirmation email with all the details.',
   },
   {
     question: 'Can I cancel or modify my reservation?',
-    answer: 'Yes, you can modify or cancel your reservation up to 48 hours before your pickup time. See our terms for details.',
+    answer: 'Yes, you can modify or cancel your reservation. Cancellations made at least 48 hours before your pickup time receive a full refund. Modifications are subject to availability. Please contact us for assistance.',
+  },
+  {
+    question: 'What forms of payment do you accept?',
+    answer: 'We accept all major credit cards (Visa, Mastercard, American Express) and debit cards. A security deposit is required at the time of pickup, which will be authorized on your card.',
+  },
+  {
+    question: 'Do you offer delivery and pickup services?',
+    answer: 'Yes, we offer delivery and pickup services for an additional fee. Delivery is available within the Phoenix metro area. Contact us to arrange delivery or pickup at your location.',
+  },
+  {
+    question: 'What happens if the vehicle is damaged?',
+    answer: 'All rentals include comprehensive insurance coverage. In the event of damage, please contact us immediately. The security deposit may be used to cover any damages not covered by insurance.',
+  },
+  {
+    question: 'Can I add additional drivers?',
+    answer: 'Yes, additional drivers can be added for a daily fee. All additional drivers must meet the same age and license requirements and be present at the time of pickup.',
+  },
+  {
+    question: 'What is your fuel policy?',
+    answer: 'Vehicles are provided with a full tank of fuel and should be returned with a full tank. If the vehicle is returned with less fuel, a refueling fee will apply.',
+  },
+  {
+    question: 'Do you offer long-term rentals?',
+    answer: 'Yes, we offer weekly and monthly rental packages with discounted rates. Contact us for pricing and availability for extended rental periods.',
   },
 ];
 
@@ -160,10 +184,22 @@ export default function PhoenixBookingPage() {
         <section className="py-12 bg-midnight-blue">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-wrap items-center justify-center gap-8">
-              {/* Placeholder for Romli logo */}
-              <div className="text-metallic-silver text-sm">Romli Logo</div>
-              <div className="text-metallic-silver text-sm">Insurance Coverage</div>
-              <div className="text-metallic-silver text-sm">24/7 Support</div>
+              {/* Roamly Logo - Place file at /public/images/partners/Roamly_Logo.jpg */}
+              <div className="flex items-center gap-3">
+                <img 
+                  src="/images/partners/Roamly_Logo.jpg" 
+                  alt="Roamly Insurance" 
+                  className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  style={{ maxWidth: '200px' }}
+                  onError={(e) => {
+                    // Hide if image doesn't exist yet
+                    const target = e.currentTarget;
+                    target.style.display = 'none';
+                  }}
+                />
+              </div>
+              <div className="text-metallic-silver text-sm font-medium">Insurance Coverage</div>
+              <div className="text-metallic-silver text-sm font-medium">24/7 Support</div>
             </div>
           </div>
         </section>

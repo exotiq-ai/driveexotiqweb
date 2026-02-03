@@ -45,8 +45,8 @@ export default function WheelbaseIframe() {
     };
   }, []);
 
-  // Temporary Wheelbase URL from design doc
-  const wheelbaseUrl = 'https://checkout.wheelbasepro.com/reserve/467628?color=000000&locale=en-us&newfilters=true';
+  // Wheelbase checkout URL
+  const wheelbaseUrl = 'https://checkout.wheelbasepro.com/reserve/461203?color=000000&locale=en-us&newfilters=true';
 
   return (
     <div className="w-full overflow-hidden">
