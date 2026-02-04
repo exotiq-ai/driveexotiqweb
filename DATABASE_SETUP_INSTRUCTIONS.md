@@ -116,3 +116,7 @@ After completing this setup:
 2. Check that data appears in Supabase Table Editor
 3. Access admin dashboard at `/admin` (after it's built)
 
+
+
+
+

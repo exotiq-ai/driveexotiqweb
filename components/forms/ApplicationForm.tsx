@@ -27,7 +27,7 @@ export default function ApplicationForm() {
 
     try {
       // Submit to Supabase
-      const { error } = await supabase
+      const { data: insertedData, error } = await supabase
         .from('applications')
         .insert([
           {
@@ -40,15 +40,45 @@ export default function ApplicationForm() {
             invite_code: data.inviteCode || null,
             created_at: new Date().toISOString(),
           },
-        ]);
+        ])
+        .select()
+        .single();
 
       if (error) {
         console.error('Supabase error:', error);
         alert('There was an error submitting your application. Please ensure your database is set up correctly.');
-      } else {
-        // Redirect to thank you page
-        router.push('/thank-you');
+        return;
       }
+
+      // Send confirmation emails (fire and forget - don't block user)
+      try {
+        await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            type: 'new_application',
+            application: {
+              full_name: data.fullName,
+              email: data.email,
+              phone: data.phone,
+              current_city: data.currentCity,
+              city_of_interest: data.cityOfInterest,
+              brief_intro: data.briefIntro,
+              invite_code: data.inviteCode || null,
+              created_at: insertedData?.created_at || new Date().toISOString(),
+            },
+          }),
+        });
+      } catch (emailError) {
+        // Log but don't fail the submission
+        console.error('Error sending confirmation email:', emailError);
+        // Application was saved successfully, so we continue
+      }
+
+      // Redirect to thank you page
+      router.push('/thank-you');
     } catch (error) {
       console.error('Error submitting application:', error);
       alert('There was an error submitting your application. Please try again.');

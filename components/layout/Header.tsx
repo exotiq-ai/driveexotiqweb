@@ -34,9 +34,6 @@ export default function Header() {
               <Link href="/booking" className="text-pure-white/90 hover:text-gulf-blue transition-colors text-[15px] font-medium">
                 Book
               </Link>
-              <Link href="/how-it-works" className="text-pure-white/90 hover:text-gulf-blue transition-colors text-[15px] font-medium">
-                How It Works
-              </Link>
               <Link href="/events" className="text-pure-white/90 hover:text-gulf-blue transition-colors text-[15px] font-medium">
                 Events
               </Link>
@@ -89,13 +86,6 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Book
-            </Link>
-            <Link
-              href="/how-it-works"
-              className="block text-pure-white text-[32px] font-semibold py-3 hover:text-gulf-blue transition-all duration-300 transform hover:translate-x-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              How It Works
             </Link>
             <Link
               href="/events"

@@ -42,3 +42,7 @@ Change the `ADMIN_PASSWORD` value to something secure. This will be used to acce
 - 🔒 Keep your service role key secret - it has full database access
 - 🌐 The anon key is safe to expose in the browser
 
+
+
+
+

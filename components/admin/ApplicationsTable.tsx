@@ -260,3 +260,7 @@ export default function ApplicationsTable({ applications, onUpdate, onRefresh }:
   );
 }
 
+
+
+
+

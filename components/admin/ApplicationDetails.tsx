@@ -164,3 +164,7 @@ export default function ApplicationDetails({ application, onClose, onUpdate }: A
   );
 }
 
+
+
+
+

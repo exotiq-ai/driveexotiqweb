@@ -3,7 +3,6 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import Problem from '@/components/sections/Problem';
 import Solution from '@/components/sections/Solution';
-import HowItWorks from '@/components/sections/HowItWorks';
 import AppPreview from '@/components/sections/AppPreview';
 import Events from '@/components/sections/Events';
 import Cities from '@/components/sections/Cities';
@@ -20,7 +19,6 @@ export default function Home() {
         <Hero />
         <Problem />
         <Solution />
-        <HowItWorks />
         <AppPreview />
         <Events />
         <Cities />

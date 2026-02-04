@@ -63,14 +63,16 @@ The exotic car community built by enthusiasts, for enthusiasts. Vetted drivers. 
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
    SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
    ADMIN_PASSWORD=your_secure_admin_password
+   RESEND_API_KEY=your_resend_api_key
    ```
 
-   **Get your credentials from Supabase:**
-   - Go to your Supabase project → Settings → API
-   - Copy the Project URL, anon/public key, and service_role key
+   **Get your credentials:**
+   - **Supabase:** Go to your Supabase project → Settings → API
+   - **Resend:** Sign up at [resend.com](https://resend.com) → API Keys → Create API Key
    - Set a secure password for admin dashboard access
    
    📄 See [`ENV_SETUP_INSTRUCTIONS.md`](ENV_SETUP_INSTRUCTIONS.md) for detailed setup guide
+   📧 See [`EMAIL_AUTOMATION_SETUP.md`](EMAIL_AUTOMATION_SETUP.md) for email automation setup
 
 4. **Set up Supabase database:**
 
