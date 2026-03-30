@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
-// Note: In production, you can add Google Fonts or local font files
-// For now, we're using system fonts for reliability
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
   title: "Drive Exotiq | Where Precision Meets Passion",
@@ -58,6 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans">
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

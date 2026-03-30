@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 export default function Footer() {
@@ -77,15 +79,27 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-metallic-silver/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-metallic-silver text-sm">
-            © 2025 Drive Exotiq. All rights reserved.
+            &copy; {new Date().getFullYear()} Exotiq Inc. dba Drive Exotiq. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link href="#" className="text-metallic-silver hover:text-gulf-blue transition-colors text-sm">
+          <div className="flex flex-wrap gap-4 sm:gap-6">
+            <Link href="/privacy" className="text-metallic-silver hover:text-gulf-blue transition-colors text-sm">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-metallic-silver hover:text-gulf-blue transition-colors text-sm">
+            <Link href="/terms" className="text-metallic-silver hover:text-gulf-blue transition-colors text-sm">
               Terms of Service
             </Link>
+            <Link href="/cookies" className="text-metallic-silver hover:text-gulf-blue transition-colors text-sm">
+              Cookies
+            </Link>
+            <Link href="/sms" className="text-metallic-silver hover:text-gulf-blue transition-colors text-sm">
+              SMS Policy
+            </Link>
+            <button
+              onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
+              className="text-metallic-silver hover:text-gulf-blue transition-colors text-sm"
+            >
+              Cookie Settings
+            </button>
           </div>
         </div>
       </div>

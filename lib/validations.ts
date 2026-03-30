@@ -13,6 +13,20 @@ export const applicationSchema = z.object({
   agreedToTerms: z.boolean().refine(val => val === true, {
     message: 'You must agree to the terms',
   }),
+  smsTransactionalConsent: z.boolean().optional().default(false),
+  smsMarketingConsent: z.boolean().optional().default(false),
 });
 
 export type ApplicationFormData = z.infer<typeof applicationSchema>;
+
+// Booking lead schema — Welcome Gate form
+export const bookingLeadSchema = z.object({
+  firstName: z.string().min(1, 'First name is required').max(100),
+  lastName: z.string().min(1, 'Last name is required').max(100),
+  email: z.string().email('Please enter a valid email address'),
+  phone: z.string().min(10, 'Please enter a valid phone number').max(20),
+  smsTransactionalConsent: z.boolean().optional().default(false),
+  smsMarketingConsent: z.boolean().optional().default(false),
+});
+
+export type BookingLeadFormData = z.infer<typeof bookingLeadSchema>;

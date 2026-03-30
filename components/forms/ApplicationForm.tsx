@@ -4,9 +4,11 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
+import SmsConsentCheckboxes from '@/components/forms/SmsConsentCheckboxes';
 import { supabase } from '@/lib/supabase';
 import { applicationSchema, ApplicationFormData } from '@/lib/validations';
 
@@ -26,7 +28,6 @@ export default function ApplicationForm() {
     setIsSubmitting(true);
 
     try {
-      // Submit to Supabase
       const { data: insertedData, error } = await supabase
         .from('applications')
         .insert([
@@ -38,6 +39,9 @@ export default function ApplicationForm() {
             city_of_interest: data.cityOfInterest,
             brief_intro: data.briefIntro,
             invite_code: data.inviteCode || null,
+            sms_transactional_consent: data.smsTransactionalConsent || false,
+            sms_marketing_consent: data.smsMarketingConsent || false,
+            consent_timestamp: new Date().toISOString(),
             created_at: new Date().toISOString(),
           },
         ])
@@ -50,7 +54,6 @@ export default function ApplicationForm() {
         return;
       }
 
-      // Send confirmation emails (fire and forget - don't block user)
       try {
         await fetch('/api/send-email', {
           method: 'POST',
@@ -72,12 +75,9 @@ export default function ApplicationForm() {
           }),
         });
       } catch (emailError) {
-        // Log but don't fail the submission
         console.error('Error sending confirmation email:', emailError);
-        // Application was saved successfully, so we continue
       }
 
-      // Redirect to thank you page
       router.push('/thank-you');
     } catch (error) {
       console.error('Error submitting application:', error);
@@ -210,12 +210,26 @@ export default function ApplicationForm() {
           className="mt-1 h-5 w-5 sm:h-4 sm:w-4 bg-graphite border-metallic-silver/30 rounded focus:ring-gulf-blue touch-manipulation flex-shrink-0"
         />
         <label htmlFor="agreedToTerms" className="text-sm sm:text-base text-metallic-silver">
-          I agree to the Drive Exotiq Terms of Service and Privacy Policy *
+          I agree to the Drive Exotiq{' '}
+          <Link href="/terms" className="text-gulf-blue underline hover:text-gulf-blue/80">
+            Terms of Service
+          </Link>{' '}
+          and{' '}
+          <Link href="/privacy" className="text-gulf-blue underline hover:text-gulf-blue/80">
+            Privacy Policy
+          </Link>{' '}
+          *
         </label>
       </div>
       {errors.agreedToTerms && (
         <p className="text-sm text-performance-orange mt-1">{errors.agreedToTerms.message}</p>
       )}
+
+      {/* SMS Consent Checkboxes */}
+      <SmsConsentCheckboxes
+        register={register}
+        variant="dark"
+      />
 
       {/* Submit Button */}
       <Button
