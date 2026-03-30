@@ -9,7 +9,6 @@ import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import SmsConsentCheckboxes from '@/components/forms/SmsConsentCheckboxes';
-import { supabase } from '@/lib/supabase';
 import { applicationSchema, ApplicationFormData } from '@/lib/validations';
 
 export default function ApplicationForm() {
@@ -28,54 +27,17 @@ export default function ApplicationForm() {
     setIsSubmitting(true);
 
     try {
-      const { data: insertedData, error } = await supabase
-        .from('de_applications')
-        .insert([
-          {
-            full_name: data.fullName,
-            email: data.email,
-            phone: data.phone,
-            current_city: data.currentCity,
-            city_of_interest: data.cityOfInterest,
-            brief_intro: data.briefIntro,
-            invite_code: data.inviteCode || null,
-            sms_transactional_consent: data.smsTransactionalConsent || false,
-            sms_marketing_consent: data.smsMarketingConsent || false,
-            consent_timestamp: new Date().toISOString(),
-            created_at: new Date().toISOString(),
-          },
-        ])
-        .select()
-        .single();
+      const res = await fetch('/api/applications', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
 
-      if (error) {
-        console.error('Supabase error:', error);
-        alert('There was an error submitting your application. Please ensure your database is set up correctly.');
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        console.error('Application API error:', err);
+        alert('There was an error submitting your application. Please try again.');
         return;
-      }
-
-      try {
-        await fetch('/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            type: 'new_application',
-            application: {
-              full_name: data.fullName,
-              email: data.email,
-              phone: data.phone,
-              current_city: data.currentCity,
-              city_of_interest: data.cityOfInterest,
-              brief_intro: data.briefIntro,
-              invite_code: data.inviteCode || null,
-              created_at: insertedData?.created_at || new Date().toISOString(),
-            },
-          }),
-        });
-      } catch (emailError) {
-        console.error('Error sending confirmation email:', emailError);
       }
 
       router.push('/thank-you');
