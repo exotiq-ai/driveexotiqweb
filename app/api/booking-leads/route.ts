@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     const supabase = getSupabaseAdmin();
 
     const { data, error } = await supabase
-      .from('booking_leads')
+      .from('de_booking_leads')
       .insert([
         {
           first_name: firstName,

@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
   try {
     const supabaseAdmin = getSupabaseAdmin();
     const { data, error } = await supabaseAdmin
-      .from('applications')
+      .from('de_applications')
       .select('*')
       .order('created_at', { ascending: false });
 
@@ -60,7 +60,7 @@ export async function PATCH(request: NextRequest) {
 
     // Get current application to check if status changed
     const { data: currentApp } = await supabaseAdmin
-      .from('applications')
+      .from('de_applications')
       .select('status')
       .eq('id', id)
       .single();
@@ -69,7 +69,7 @@ export async function PATCH(request: NextRequest) {
 
     // Update application
     const { data, error } = await supabaseAdmin
-      .from('applications')
+      .from('de_applications')
       .update({
         status,
         notes: notes || null,

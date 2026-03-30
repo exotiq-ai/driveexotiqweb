@@ -22,7 +22,7 @@ export default function InstagramFeed() {
   const fetchPosts = async () => {
     try {
       const { data, error } = await supabase
-        .from('instagram_posts')
+        .from('de_instagram_posts')
         .select('id, post_url, image_url, caption')
         .eq('is_active', true)
         .order('display_order', { ascending: false })

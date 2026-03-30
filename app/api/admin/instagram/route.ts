@@ -57,7 +57,7 @@ export async function GET(request: NextRequest) {
   try {
     const supabaseAdmin = getSupabaseAdmin();
     const { data, error } = await supabaseAdmin
-      .from('instagram_posts')
+      .from('de_instagram_posts')
       .select('*')
       .order('display_order', { ascending: false })
       .order('created_at', { ascending: false });
@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
 
     const supabaseAdmin = getSupabaseAdmin();
     const { data, error } = await supabaseAdmin
-      .from('instagram_posts')
+      .from('de_instagram_posts')
       .insert({
         post_url,
         image_url: embedUrl,
@@ -144,7 +144,7 @@ export async function PATCH(request: NextRequest) {
 
     const supabaseAdmin = getSupabaseAdmin();
     const { data, error } = await supabaseAdmin
-      .from('instagram_posts')
+      .from('de_instagram_posts')
       .update(updates)
       .eq('id', id)
       .select()
@@ -178,7 +178,7 @@ export async function DELETE(request: NextRequest) {
 
     const supabaseAdmin = getSupabaseAdmin();
     const { error } = await supabaseAdmin
-      .from('instagram_posts')
+      .from('de_instagram_posts')
       .delete()
       .eq('id', id);
 

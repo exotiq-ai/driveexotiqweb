@@ -29,7 +29,7 @@ export default function ApplicationForm() {
 
     try {
       const { data: insertedData, error } = await supabase
-        .from('applications')
+        .from('de_applications')
         .insert([
           {
             full_name: data.fullName,
