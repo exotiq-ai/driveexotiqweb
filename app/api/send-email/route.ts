@@ -8,9 +8,16 @@ import {
   ApplicationData,
 } from '@/lib/email-templates';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = 'force-dynamic';
 
-// Admin email (where notifications go)
+let _resend: Resend | null = null;
+function getResend() {
+  if (!_resend) {
+    _resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return _resend;
+}
+
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'hello@exotiq.ai';
 const FROM_EMAIL = process.env.FROM_EMAIL || 'Drive Exotiq <hello@exotiq.ai>';
 
@@ -52,7 +59,7 @@ export async function POST(request: NextRequest) {
     if (type === 'new_application') {
       // Send confirmation to applicant
       try {
-        const applicantResult = await resend.emails.send({
+        const applicantResult = await getResend().emails.send({
           from: FROM_EMAIL,
           to: application.email,
           subject: 'We received your Drive Exotiq application! 🚗',
@@ -75,7 +82,7 @@ export async function POST(request: NextRequest) {
 
       // Send notification to admin
       try {
-        const adminResult = await resend.emails.send({
+        const adminResult = await getResend().emails.send({
           from: FROM_EMAIL,
           to: ADMIN_EMAIL,
           subject: `New Application: ${application.full_name} - ${application.city_of_interest}`,
@@ -99,7 +106,7 @@ export async function POST(request: NextRequest) {
       // Status changed (approved/rejected)
       if (application.status === 'approved') {
         try {
-          const approvalResult = await resend.emails.send({
+          const approvalResult = await getResend().emails.send({
             from: FROM_EMAIL,
             to: application.email,
             subject: 'Welcome to Drive Exotiq! 🎉',
@@ -121,7 +128,7 @@ export async function POST(request: NextRequest) {
         }
       } else if (application.status === 'rejected') {
         try {
-          const rejectionResult = await resend.emails.send({
+          const rejectionResult = await getResend().emails.send({
             from: FROM_EMAIL,
             to: application.email,
             subject: 'Update on your Drive Exotiq application',
