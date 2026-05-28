@@ -78,6 +78,13 @@ export default function Header() {
         <div className="relative h-full flex flex-col justify-center px-8 pb-20">
           <nav className="space-y-2">
             <Link
+              href="/pricing"
+              className="block text-pure-white text-[32px] font-semibold py-3 hover:text-gulf-blue transition-all duration-300 transform hover:translate-x-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Pricing
+            </Link>
+            <Link
               href="/events"
               className="block text-pure-white text-[32px] font-semibold py-3 hover:text-gulf-blue transition-all duration-300 transform hover:translate-x-2"
               onClick={() => setMobileMenuOpen(false)}

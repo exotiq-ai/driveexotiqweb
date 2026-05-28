@@ -191,7 +191,7 @@ export default function InvestorsPage() {
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-2 h-2 bg-gulf-blue rounded-full mt-2"></div>
                   <p className="text-body-lg text-pure-white">
-                    <span className="font-semibold text-performance-orange">No predatory commissions.</span> Operator-first SaaS model ($49-$199/month)
+                    <span className="font-semibold text-performance-orange">No predatory commissions.</span> Operator-first SaaS model ($29-$39/vehicle/month)
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
