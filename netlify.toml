@@ -10,11 +10,11 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Redirect rules
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# NOTE: Routing is owned entirely by @netlify/plugin-nextjs (above).
+# The previous SPA catch-all redirect (/* -> /index.html, 200) has been removed —
+# it shadowed the Next.js runtime, would collapse every URL to a non-existent
+# static shell (killing per-route SEO) and mask the /api/* route handlers
+# (silently breaking forms + email). Do not re-add it.
 
 # Headers for security and performance
 [[headers]]

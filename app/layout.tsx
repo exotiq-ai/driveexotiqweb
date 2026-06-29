@@ -1,30 +1,78 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
 
+// Brand type system — self-hosted variable fonts (no build-time network fetch,
+// best-in-class CWV). Display = Space Grotesk (the licensed-Clash-Display swap-in
+// lands later); body = Inter; data/eyebrows = JetBrains Mono ("instrument cluster").
+const display = localFont({
+  src: "./fonts/space-grotesk-variable.woff2",
+  variable: "--font-display",
+  display: "swap",
+  weight: "300 700",
+});
+const sans = localFont({
+  src: "./fonts/inter-variable.woff2",
+  variable: "--font-sans",
+  display: "swap",
+  weight: "100 900",
+});
+const mono = localFont({
+  src: "./fonts/jetbrains-mono-variable.woff2",
+  variable: "--font-mono",
+  display: "swap",
+  weight: "100 800",
+});
+
+const SITE_URL = "https://driveexotiq.com";
+
 export const metadata: Metadata = {
-  title: "Drive Exotiq | Where Precision Meets Passion",
-  description: "The exotic car community built by enthusiasts, for enthusiasts. Vetted drivers. Curated experiences. Zero compromises.",
-  keywords: ["exotic cars", "luxury car rental", "supercar rental", "Denver", "Scottsdale", "Miami", "car community"],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Drive Exotiq — Exotic Cars That Actually Get Driven",
+    template: "%s | Drive Exotiq",
+  },
+  description:
+    "The community around exotic cars that get driven — invite-only monthly drives, a coast-to-coast tour, and the front door to the exotiq.rent marketplace. The keys are out of the glovebox.",
+  keywords: [
+    "exotic cars",
+    "supercar community",
+    "Cars and Coffee",
+    "exotic car rental",
+    "exotic car tour",
+    "Denver",
+    "Dallas",
+    "Austin",
+    "Houston",
+    "Atlanta",
+    "Miami",
+    "exotiq.rent",
+  ],
   authors: [{ name: "Drive Exotiq" }],
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     other: [
       { rel: "android-chrome", url: "/android-chrome-192x192.png", sizes: "192x192" },
       { rel: "android-chrome", url: "/android-chrome-512x512.png", sizes: "512x512" },
     ],
   },
   openGraph: {
-    title: "Drive Exotiq | Where Precision Meets Passion",
-    description: "The exotic car community built by enthusiasts, for enthusiasts. Vetted drivers. Curated experiences. Zero compromises.",
-    url: "https://driveexotiq.com",
+    title: "Drive Exotiq — Exotic Cars That Actually Get Driven",
+    description:
+      "Invite-only monthly drives, a Denver-to-Miami exotic tour, and the front door to the exotiq.rent marketplace. The keys are out of the glovebox.",
+    url: SITE_URL,
     siteName: "Drive Exotiq",
     locale: "en_US",
     type: "website",
@@ -33,14 +81,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Drive Exotiq - Where Precision Meets Passion",
+        alt: "Drive Exotiq — Exotic Cars That Actually Get Driven",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Drive Exotiq | Where Precision Meets Passion",
-    description: "The exotic car community built by enthusiasts, for enthusiasts. Vetted drivers. Curated experiences. Zero compromises.",
+    title: "Drive Exotiq — Exotic Cars That Actually Get Driven",
+    description:
+      "Invite-only drives, a coast-to-coast exotic tour, and the front door to the exotiq.rent marketplace.",
     images: ["/og-image.png"],
     creator: "@driveexotiq",
     site: "@driveexotiq",
@@ -53,8 +102,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="font-sans">
+    <html
+      lang="en"
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+    >
+      <body className="font-sans bg-obsidian-950 text-obsidian-100 antialiased">
         {children}
         <CookieConsent />
       </body>

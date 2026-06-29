@@ -2,34 +2,45 @@ import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
 }
 
+/**
+ * Brand v1 button. "Gold is the jewelry, blue is the engine."
+ * - primary   = gold fill pill — the ONE gold moment per view
+ * - secondary = gulf-blue ghost — the "engine on" CTA
+ * - outline   = quiet obsidian ghost
+ * - ghost     = text only
+ * No glassmorphism, no gradient fills, no glow stacks — crisp and weighted.
+ */
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => {
     return (
       <button
         ref={ref}
         className={cn(
-          'rounded-2xl font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.97] touch-manipulation backdrop-blur-xl',
+          'inline-flex items-center justify-center rounded-full font-sans font-semibold tracking-wide',
+          'transition-all duration-250 ease-cinematic touch-manipulation select-none',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gulf-500 focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian-950',
+          'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0',
           {
-            // Primary (Gulf Blue) - Glass effect with glow
-            'bg-gradient-to-br from-gulf-blue to-gulf-blue/90 text-pure-white hover:shadow-2xl hover:shadow-gulf-blue/40 shadow-lg shadow-gulf-blue/30 hover:scale-[1.02] border border-gulf-blue/20':
+            // Primary — the single gold moment per view
+            'bg-gold-500 text-obsidian-950 shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] hover:bg-gold-400 hover:-translate-y-px hover:shadow-elev-gold active:bg-gold-600 active:translate-y-0':
               variant === 'primary',
-
-            // Secondary (Performance Orange) - Glass effect
-            'bg-gradient-to-br from-performance-orange to-performance-orange/90 text-pure-white hover:shadow-2xl hover:shadow-performance-orange/40 shadow-lg shadow-performance-orange/30 hover:scale-[1.02] border border-performance-orange/20':
+            // Secondary — the gulf "engine" ghost
+            'border border-gulf-500 text-gulf-300 bg-transparent hover:bg-gulf-500/10 hover:border-gulf-400 hover:text-gulf-200':
               variant === 'secondary',
-
-            // Outline - Glassmorphism style
-            'border-2 border-white/20 text-pure-white bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-gulf-blue/50 hover:text-gulf-blue active:bg-white/5 hover:shadow-lg hover:shadow-gulf-blue/20':
+            // Outline — quiet obsidian ghost
+            'border border-white/15 text-obsidian-100 bg-transparent hover:bg-white/[0.06] hover:border-white/30':
               variant === 'outline',
+            // Ghost — text only
+            'text-obsidian-200 hover:text-obsidian-50 hover:bg-white/[0.05]':
+              variant === 'ghost',
 
-            // Sizes - Optimized for touch with refined padding (48px minimum for accessibility)
-            'px-6 py-3 text-[15px] min-h-[48px] tracking-wide': size === 'sm',
-            'px-8 py-4 text-[17px] min-h-[52px] tracking-wide': size === 'md',
-            'px-10 py-5 text-[19px] min-h-[56px] tracking-wide': size === 'lg',
+            'px-6 py-3 text-[15px] min-h-[48px]': size === 'sm',
+            'px-8 py-4 text-[16px] min-h-[52px]': size === 'md',
+            'px-10 py-5 text-[18px] min-h-[56px]': size === 'lg',
           },
           className
         )}
