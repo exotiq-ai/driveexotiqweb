@@ -3,26 +3,29 @@ import localFont from "next/font/local";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
 
-// Brand type system — self-hosted variable fonts (no build-time network fetch,
-// best-in-class CWV). Display = Space Grotesk (the licensed-Clash-Display swap-in
-// lands later); body = Inter; data/eyebrows = JetBrains Mono ("instrument cluster").
+// Drive Exotiq type system (self-hosted, no build-time network fetch):
+// Bricolage Grotesque (display) · Schibsted Grotesk (UI/body) · Spectral (serif voice).
 const display = localFont({
-  src: "./fonts/space-grotesk-variable.woff2",
+  src: "./fonts/bricolage-variable.woff2",
   variable: "--font-display",
   display: "swap",
-  weight: "300 700",
+  weight: "400 800",
 });
 const sans = localFont({
-  src: "./fonts/inter-variable.woff2",
+  src: "./fonts/schibsted-variable.woff2",
   variable: "--font-sans",
   display: "swap",
-  weight: "100 900",
+  weight: "400 700",
 });
-const mono = localFont({
-  src: "./fonts/jetbrains-mono-variable.woff2",
-  variable: "--font-mono",
+const serif = localFont({
+  src: [
+    { path: "./fonts/spectral-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/spectral-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "./fonts/spectral-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/spectral-500-italic.woff2", weight: "500", style: "italic" },
+  ],
+  variable: "--font-serif",
   display: "swap",
-  weight: "100 800",
 });
 
 const SITE_URL = "https://driveexotiq.com";
@@ -104,9 +107,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+      className={`${display.variable} ${sans.variable} ${serif.variable}`}
     >
-      <body className="font-sans bg-obsidian-950 text-obsidian-100 antialiased">
+      <body className="font-sans bg-canvas text-ink antialiased">
         {children}
         <CookieConsent />
       </body>

@@ -2,112 +2,104 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import Button from '@/components/ui/Button';
-import Logo from '@/components/ui/Logo';
+import Emblem from '@/components/ui/Emblem';
+
+const NAV = [
+  { label: 'The Tour', href: '/tour' },
+  { label: 'Monthly Drives', href: '/drives' },
+  { label: 'Community', href: '/community' },
+  { label: 'Marketplace', href: '/marketplace' },
+  { label: 'Stories', href: '/blog' },
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = open ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [mobileMenuOpen]);
+  }, [open]);
 
   return (
     <>
-      {/* Header Bar */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-deep-black/80 backdrop-blur-xl border-b border-white/10 supports-[backdrop-filter]:bg-deep-black/60">
-        <nav className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo - Expert responsive implementation */}
-            <Logo />
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-xl">
+        <nav className="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:px-10">
+          {/* Lockup */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-ink transition-opacity duration-250 hover:opacity-80"
+            aria-label="Drive Exotiq — Home"
+          >
+            <Emblem className="h-[22px] w-auto" />
+            <span className="font-display text-[20px] font-bold tracking-tight-exotiq">
+              Drive Exotiq
+            </span>
+          </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              <Link href="/events" className="text-pure-white/90 hover:text-gulf-blue transition-colors text-[15px] font-medium">
-                Events
+          {/* Desktop nav */}
+          <div className="hidden items-center gap-9 lg:flex">
+            {NAV.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group relative text-[15px] text-ink-2 transition-colors duration-250 hover:text-ink"
+              >
+                {item.label}
+                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-jewel transition-all duration-250 ease-de group-hover:w-full" />
               </Link>
-              <Link href="/cities" className="text-pure-white/90 hover:text-gulf-blue transition-colors text-[15px] font-medium">
-                Cities
-              </Link>
-              <Link href="/investors" className="text-pure-white/90 hover:text-gulf-blue transition-colors text-[15px] font-medium">
-                Investors
-              </Link>
-              <Link href="/apply">
-                <Button variant="primary" size="sm">
-                  Apply
-                </Button>
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden text-pure-white relative z-50 p-2 -mr-2 touch-manipulation"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
+            ))}
+            <Link
+              href="/apply"
+              className="rounded-sm bg-gulf px-5 py-2.5 text-[15px] font-semibold text-on-gulf transition-colors duration-250 ease-de hover:bg-gulf-2"
             >
-              <div className="w-6 h-5 flex flex-col justify-between">
-                <span className={`block h-0.5 w-full bg-current transform transition-all duration-300 ease-out ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-                <span className={`block h-0.5 w-full bg-current transition-all duration-300 ease-out ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
-                <span className={`block h-0.5 w-full bg-current transform transition-all duration-300 ease-out ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-              </div>
-            </button>
+              Get on the list
+            </Link>
           </div>
+
+          {/* Mobile toggle */}
+          <button
+            className="relative z-50 -mr-2 p-2 text-ink lg:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+          >
+            <div className="flex h-5 w-6 flex-col justify-between">
+              <span className={`h-px w-full bg-current transition-all duration-300 ${open ? 'translate-y-2 rotate-45' : ''}`} />
+              <span className={`h-px w-full bg-current transition-all duration-300 ${open ? 'opacity-0' : 'opacity-100'}`} />
+              <span className={`h-px w-full bg-current transition-all duration-300 ${open ? '-translate-y-2 -rotate-45' : ''}`} />
+            </div>
+          </button>
         </nav>
       </header>
 
-      {/* Full Screen Mobile Menu - Apple Style */}
+      {/* Mobile sheet */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ease-out ${
-          mobileMenuOpen
-            ? 'opacity-100 pointer-events-auto'
-            : 'opacity-0 pointer-events-none'
+        className={`fixed inset-0 z-40 bg-canvas transition-opacity duration-400 ease-de lg:hidden ${
+          open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
-        {/* Backdrop with blur */}
-        <div className="absolute inset-0 bg-deep-black/95 backdrop-blur-2xl" />
-        
-        {/* Menu Content */}
-        <div className="relative h-full flex flex-col justify-center px-8 pb-20">
-          <nav className="space-y-2">
-            <Link
-              href="/events"
-              className="block text-pure-white text-[32px] font-semibold py-3 hover:text-gulf-blue transition-all duration-300 transform hover:translate-x-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Events
-            </Link>
-            <Link
-              href="/cities"
-              className="block text-pure-white text-[32px] font-semibold py-3 hover:text-gulf-blue transition-all duration-300 transform hover:translate-x-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Cities
-            </Link>
-            <Link
-              href="/investors"
-              className="block text-pure-white text-[32px] font-semibold py-3 hover:text-gulf-blue transition-all duration-300 transform hover:translate-x-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Investors
-            </Link>
+        <div className="flex h-full flex-col justify-center px-8 pb-16">
+          <nav className="space-y-1">
+            {NAV.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="block py-3 font-display text-[30px] font-bold tracking-tight-exotiq text-ink transition-transform duration-250 hover:translate-x-1"
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
-          
-          {/* CTA Button */}
-          <div className="mt-12">
-            <Link href="/apply" onClick={() => setMobileMenuOpen(false)}>
-              <Button variant="primary" size="lg" className="w-full">
-                Apply for Access
-              </Button>
-            </Link>
-          </div>
+          <Link
+            href="/apply"
+            onClick={() => setOpen(false)}
+            className="mt-10 inline-flex items-center justify-center rounded-sm bg-gulf px-6 py-3.5 font-semibold text-on-gulf"
+          >
+            Get on the list
+          </Link>
         </div>
       </div>
     </>

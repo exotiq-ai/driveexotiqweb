@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-obsidian-950 text-obsidian-100 antialiased;
+    @apply bg-canvas text-ink antialiased;
   }
 
   /* Typography Scale - Optimized for Mobile */
@@ -290,47 +290,66 @@
 }
 
 /* ============================================================
-   BRAND v1 — cinematic texture + scroll-reveal primitives
-   "Black is the room. Gold is the jewelry. Blue is the engine."
+   DRIVE EXOTIQ — design tokens (tokens.css)
+   Quiet, warm, hairline-depth. Gulf = actions only. Never glow.
    ============================================================ */
+:root {
+  --de-bg: #0B0B0C;        --de-bg-2: #101012;
+  --de-surface: #161618;   --de-surface-2: #1F1F23;
+  --de-line: #28282C;      --de-line-2: #3A3A40;
+  --de-text: #F3F1EC;      --de-text-2: #ABA8A1;     --de-text-3: #6F6D67;
+  --de-metal: #C9C6BD;
+  --de-gulf: #6CBDE6;      --de-gulf-2: #8ED0F0;     --de-gulf-soft: rgba(108,189,230,.12);
+  --de-on-gulf: #08222E;
+  --de-papaya: #FF5A1F;    --de-papaya-soft: rgba(255,90,31,.12);
+  --de-centurion: #070708;
+  /* Gold — the "jewelry" accent (variant B). Champagne, never neon. */
+  --de-gold: #C8A24E;      --de-gold-2: #E2C078;
 
-/* Film grain — layered over dark sections so they read "film", not "dark website".
-   Apply to a `position: relative` element; the grain paints as an ::after overlay. */
-.bg-grain { position: relative; }
-.bg-grain::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* jewel = the precious-accent slot. Metal by default; gold under [data-variant="gold"]. */
+  --de-jewel: var(--de-metal);
+  --de-jewel-2: var(--de-metal);
+
+  --de-radius: 2px;        --de-radius-md: 4px;
+  --de-maxw: 1180px;       --de-ease: cubic-bezier(.2,.7,.2,1);
 }
 
-/* Gold hairline rule — section dividers, under eyebrows. */
-.gold-hairline {
+[data-theme="light"] {
+  --de-bg: #F4F1EA;        --de-bg-2: #EBE7DD;
+  --de-surface: #FFFFFF;   --de-surface-2: #FAF8F3;
+  --de-line: #E3DED3;      --de-line-2: #CFC8BA;
+  --de-text: #171611;      --de-text-2: #5C594F;     --de-text-3: #8B8479;
+  --de-metal: #8A8579;
+  --de-gulf: #2C90C6;      --de-on-gulf: #FFFFFF;
+  --de-gold: #9C7B2E;      --de-gold-2: #C8A24E;
+}
+
+/* Variant B — gold takes the jewelry slot (gulf stays the only action color). */
+[data-variant="gold"] {
+  --de-jewel: var(--de-gold);
+  --de-jewel-2: var(--de-gold-2);
+}
+
+/* Hairline rule — the jewelry divider. Uses the active jewel tone. */
+.hairline {
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, rgba(210,172,87,0.5) 50%, transparent);
+  background: linear-gradient(90deg, transparent, var(--de-jewel) 50%, transparent);
+  opacity: 0.5;
 }
 
-/* The signature eyebrow: mono + gold + uppercase + wide tracking. */
-.eyebrow {
-  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #D2AC57; /* gold-400 */
+/* Spectral italic index numerals ("01", "02") — the serif voice, never uppercase. */
+.idx {
+  font-family: var(--font-serif), Spectral, Georgia, serif;
+  font-style: italic;
+  color: var(--de-text-3);
 }
 
 /* Scroll-reveal — toggled to .is-visible by an IntersectionObserver client island. */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
-              transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--de-ease), transform 0.6s var(--de-ease);
   will-change: opacity, transform;
 }
 .reveal.is-visible {
@@ -348,8 +367,5 @@
   }
   html { scroll-behavior: auto; }
   .reveal { transform: none; transition: opacity 0.2s ease; }
-  .animate-ken-burns,
-  .animate-grain,
-  .animate-pulse-live { animation: none !important; }
 }
 
