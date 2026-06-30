@@ -9,10 +9,12 @@ const BASE = 'https://driveexotiq.com';
  */
 const ROUTES: Array<{ path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }> = [
   { path: '', priority: 1.0, changeFrequency: 'weekly' },
-  { path: '/how-it-works', priority: 0.7, changeFrequency: 'monthly' },
-  { path: '/cities', priority: 0.7, changeFrequency: 'monthly' },
-  { path: '/events', priority: 0.8, changeFrequency: 'weekly' },
-  { path: '/investors', priority: 0.5, changeFrequency: 'monthly' },
+  { path: '/tour', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/drives', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/sponsor', priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/community', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/marketplace', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/blog', priority: 0.7, changeFrequency: 'weekly' },
   { path: '/apply', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/terms', priority: 0.3, changeFrequency: 'yearly' },
