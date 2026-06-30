@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import Emblem from '@/components/ui/Emblem';
 import GarageStage from '@/components/home/GarageStage';
 import ArrivalScene from '@/components/home/ArrivalScene';
 import Room from '@/components/home/Room';
@@ -27,13 +26,6 @@ export default function Home() {
         {/* H0 — Arrival */}
         <section aria-labelledby="arrival-heading" className="relative">
           <ArrivalScene>
-            <p className="flex items-center gap-3 text-ink-2">
-              <Emblem className="h-[20px] w-auto text-ink" />
-              <span className="font-display text-[18px] font-bold tracking-tight-exotiq text-ink">
-                Drive Exotiq
-              </span>
-            </p>
-
             <h1
               id="arrival-heading"
               className="mt-7 max-w-[16ch] font-display text-[clamp(40px,8vw,104px)] font-bold leading-[0.92] tracking-tight-exotiq text-ink"
@@ -55,7 +47,7 @@ export default function Home() {
 
         {/* H1 — The Drives */}
         <section aria-label="The Drives" className="relative">
-          <Room index="01">
+          <Room index="01" image={{ src: '/images/events/denver-event.jpg' }}>
             <RoomCopy
               title="The Drives"
               promise="Last Sunday of the month. Before the city wakes."
@@ -69,7 +61,7 @@ export default function Home() {
 
         {/* H2 — The Tour */}
         <section aria-label="The Tour" className="relative">
-          <Room index="02" align="right">
+          <Room index="02" align="right" image={{ src: '/images/cars/R8-telluride.jpg' }}>
             <RoomCopy
               title="The Tour"
               promise="One car. Denver to Miami. Ten markets. 5,000 miles."
