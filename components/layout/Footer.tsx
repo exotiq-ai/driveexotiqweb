@@ -2,9 +2,10 @@ import Link from 'next/link';
 import Emblem from '@/components/ui/Emblem';
 
 const EXPLORE = [
+  { label: 'The Drives', href: '/drives' },
   { label: 'The Tour', href: '/tour' },
-  { label: 'Monthly Drives', href: '/drives' },
   { label: 'Community', href: '/community' },
+  { label: 'Marketplace', href: '/marketplace' },
   { label: 'Stories', href: '/blog' },
   { label: 'Sponsor', href: '/sponsor' },
 ];
@@ -29,8 +30,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-5 max-w-sm font-serif text-lg italic leading-snug text-ink-2">
-              The community around exotic cars that get driven — and the front door
-              to the exotiq.rent marketplace.
+              An Exotiq Inc. brand. The community front door to exotiq.rent.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function Footer() {
             Built for the people who actually drive the car.
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-ink-3">
-            <span>© {new Date().getFullYear()} Drive Exotiq · an Exotiq Inc. brand</span>
+            <span>© {new Date().getFullYear()} Exotiq Inc. All rights reserved.</span>
             <Link href="/privacy" className="transition-colors hover:text-ink-2">Privacy</Link>
             <Link href="/terms" className="transition-colors hover:text-ink-2">Terms</Link>
           </div>

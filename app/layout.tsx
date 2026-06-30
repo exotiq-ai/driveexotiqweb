@@ -34,11 +34,11 @@ const SITE_URL = "https://driveexotiq.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Drive Exotiq — Exotic Cars That Actually Get Driven",
-    template: "%s | Drive Exotiq",
+    default: "Drive Exotiq — Built for People Who Drive the Car",
+    template: "%s · Drive Exotiq",
   },
   description:
-    "The community around exotic cars that get driven — invite-only monthly drives, a coast-to-coast tour, and the front door to the exotiq.rent marketplace. The keys are out of the glovebox.",
+    "The community front door to the exotiq.rent exotic-car marketplace. Invite-only sunrise drives, the Denver→Miami tour, and what's coming.",
   keywords: [
     "exotic cars",
     "supercar community",
@@ -73,9 +73,9 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Drive Exotiq — Exotic Cars That Actually Get Driven",
+    title: "Drive Exotiq — Built for People Who Drive the Car",
     description:
-      "Invite-only monthly drives, a Denver-to-Miami exotic tour, and the front door to the exotiq.rent marketplace. The keys are out of the glovebox.",
+      "The community front door to the exotiq.rent exotic-car marketplace. Monthly sunrise drives, the Denver→Miami tour, and what's coming next.",
     url: SITE_URL,
     siteName: "Drive Exotiq",
     locale: "en_US",
@@ -91,9 +91,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Drive Exotiq — Exotic Cars That Actually Get Driven",
+    title: "Drive Exotiq — Built for People Who Drive the Car",
     description:
-      "Invite-only drives, a coast-to-coast exotic tour, and the front door to the exotiq.rent marketplace.",
+      "The community front door to the exotiq.rent exotic-car marketplace. Invite-only sunrise drives and the Denver→Miami tour.",
     images: ["/og-image.png"],
     creator: "@driveexotiq",
     site: "@driveexotiq",

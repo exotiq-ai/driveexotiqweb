@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react';
 import Emblem from '@/components/ui/Emblem';
 
 const NAV = [
+  { label: 'The Drives', href: '/drives' },
   { label: 'The Tour', href: '/tour' },
-  { label: 'Monthly Drives', href: '/drives' },
   { label: 'Community', href: '/community' },
   { label: 'Marketplace', href: '/marketplace' },
   { label: 'Stories', href: '/blog' },
