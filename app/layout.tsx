@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
+import SmoothScroll from "@/components/providers/SmoothScroll";
 
 // Drive Exotiq type system (self-hosted, no build-time network fetch):
 // Bricolage Grotesque (display) · Schibsted Grotesk (UI/body) · Spectral (serif voice).
@@ -110,7 +111,7 @@ export default function RootLayout({
       className={`${display.variable} ${sans.variable} ${serif.variable}`}
     >
       <body className="font-sans bg-canvas text-ink antialiased">
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
         <CookieConsent />
       </body>
     </html>
