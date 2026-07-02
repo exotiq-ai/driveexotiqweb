@@ -5,7 +5,13 @@
  * fallback and the cinematic stage.
  */
 
-/** Round-trip odometer target. Matches the "~5,000 miles" headline. Single constant. */
+/**
+ * Tour-campaign mileage target — the canonical "~5,000 miles" figure.
+ * This is the FULL tour running total (legs + drives + activations + the miles
+ * between), not the sum of the one-way city legs below (~2,500 mi). Anything
+ * that displays this number must phrase it as tour/campaign mileage, never as
+ * a leg total, so the two never read as a contradiction.
+ */
 export const ODO_TARGET = 4980;
 
 export interface CityBeat {

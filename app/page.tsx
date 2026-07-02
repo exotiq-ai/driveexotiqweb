@@ -6,6 +6,30 @@ import ArrivalScene from '@/components/home/ArrivalScene';
 import Room from '@/components/home/Room';
 import RoomCopy from '@/components/home/RoomCopy';
 import CloseScene from '@/components/home/CloseScene';
+import JsonLd from '@/components/JsonLd';
+
+/**
+ * Organization + WebSite structured data (BUILD-SPEC §4). Facts only — the
+ * brand relationship and canonical positioning; no numbers, no dates.
+ */
+const ORG_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Drive Exotiq',
+  url: 'https://driveexotiq.com',
+  logo: 'https://driveexotiq.com/android-chrome-512x512.png',
+  description:
+    'Drive Exotiq is the community front door to the exotiq.rent exotic-car marketplace. An Exotiq Inc. brand.',
+  parentOrganization: { '@type': 'Organization', name: 'Exotiq Inc.' },
+  sameAs: ['https://www.instagram.com/driveexotiq/'],
+};
+
+const WEBSITE_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Drive Exotiq',
+  url: 'https://driveexotiq.com',
+};
 
 /**
  * THE GARAGE — home. A SERVER component: all copy, headings and links render
@@ -17,6 +41,8 @@ import CloseScene from '@/components/home/CloseScene';
 export default function Home() {
   return (
     <>
+      <JsonLd data={ORG_JSON_LD} />
+      <JsonLd data={WEBSITE_JSON_LD} />
       <Header />
 
       {/* fixed cinematic backdrop the visitor scrolls through (decorative) */}
@@ -26,6 +52,11 @@ export default function Home() {
         {/* H0 — Arrival */}
         <section aria-labelledby="arrival-heading" className="relative">
           <ArrivalScene>
+            {/* H0-WORDMARK-LOCKUP — the brand names itself before the promise */}
+            <p className="flex items-center gap-3 font-display text-[clamp(15px,1.6vw,19px)] font-semibold tracking-tight-exotiq text-metal">
+              <span className="h-px w-7 bg-jewel" aria-hidden="true" />
+              Drive Exotiq
+            </p>
             <h1
               id="arrival-heading"
               className="mt-7 max-w-[16ch] font-display text-[clamp(40px,8vw,104px)] font-bold leading-[0.92] tracking-tight-exotiq text-ink"
@@ -61,12 +92,16 @@ export default function Home() {
 
         {/* H2 — The Tour */}
         <section aria-label="The Tour" className="relative">
-          <Room index="02" align="right" image={{ src: '/images/cars/R8-telluride.jpg' }}>
+          {/* S8 plate here, not the R8 — this room previews the wrappable tour car */}
+          <Room
+            index="02"
+            align="right"
+            image={{ src: '/images/cars/Audi_S8_tortillaflats_adamkiss.jpg' }}
+          >
             <RoomCopy
               title="The Tour"
               promise="One car. Denver to Miami. Ten markets. 5,000 miles."
-              jewel="A single built S8, running coast to coast."
-              micro="Summer into fall, 2026."
+              micro="A 2017 Audi S8 · summer into fall 2026"
               href="/tour"
               cta="Ride the tour"
               align="right"
@@ -112,9 +147,8 @@ export default function Home() {
           >
             <RoomCopy
               title="The Sponsor"
-              promise="Your livery on this car. Down this road."
-              jewel="One name, carried five thousand miles."
-              micro="One wrap sponsor. Ten markets. 5,000 miles."
+              promise="Your livery on this car. Down this line. Ten cities."
+              micro="One wrap sponsor. 5,000 miles of road."
               href="/sponsor"
               cta="See the wrap opportunity"
             />

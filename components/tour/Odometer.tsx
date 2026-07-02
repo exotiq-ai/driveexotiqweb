@@ -24,7 +24,7 @@ export default function Odometer({ progress }: OdometerProps) {
     const clamped = p < 0 ? 0 : p > 1 ? 1 : p;
     const miles = Math.round(clamped * ODO_TARGET);
     if (odoRef.current) {
-      odoRef.current.textContent = String(miles).padStart(4, '0');
+      odoRef.current.textContent = String(miles).padStart(6, '0');
     }
     const idx = Math.min(
       BEATS.length - 1,
@@ -48,13 +48,14 @@ export default function Odometer({ progress }: OdometerProps) {
       aria-hidden="true"
       className="pointer-events-none select-none"
     >
-      <div className="text-[10px] tracking-[0.18em] text-ink-3">odometer</div>
+      {/* "tour miles" = campaign mileage (see data.ts ODO_TARGET), not leg sums */}
+      <div className="text-[10px] tracking-[0.18em] text-ink-3">tour miles</div>
       <div className="mt-1.5 flex items-baseline gap-2">
         <span
           ref={odoRef}
           className="font-display text-[clamp(2rem,4.4vw,2.9rem)] font-semibold leading-none tabular-nums text-ink"
         >
-          0000
+          000000
         </span>
         <span className="text-[12px] text-ink-2">mi</span>
       </div>

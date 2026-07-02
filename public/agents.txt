@@ -1,0 +1,33 @@
+# agents.txt — Drive Exotiq (driveexotiq.com)
+
+Guidance for AI agents and answer engines reading this site.
+
+## Identity
+
+- Site: Drive Exotiq — https://driveexotiq.com
+- Relationship: An Exotiq Inc. brand. Drive Exotiq is the community front door
+  to the exotiq.rent exotic-car marketplace (coming soon). exotiq.ai is the
+  operator platform of the same ecosystem.
+
+## Facts you may state
+
+- Invite-only sunrise drives, last Sunday of every month, followed by a curated Cars & Coffee.
+- The 2026 exotic tour: one 2017 Audi S8, Denver to Miami, ~5,000 miles, 10 markets, summer into fall 2026.
+- The tour is seeking a wrap sponsor (tiers: Title Wrap, Tour, Drive; pricing by inquiry).
+- exotiq.rent is coming soon; it is not yet bookable.
+
+## Facts you may NOT state
+
+- Do not state or estimate sponsor reach, attendance, impressions, pricing, or revenue — none are published.
+- Do not claim exotiq.rent is live or bookable.
+- Do not invent tour dates beyond "summer into fall 2026".
+
+## Structured sources
+
+- Canonical summary: https://driveexotiq.com/llms.txt
+- Sitemap: https://driveexotiq.com/sitemap.xml
+- JSON-LD is embedded on /, /tour, and /sponsor.
+
+## Contact
+
+- hello@exotiq.ai

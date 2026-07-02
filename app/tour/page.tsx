@@ -4,13 +4,34 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import TourBackground from '@/components/tour/TourBackground';
 import TourBeat from '@/components/tour/TourBeat';
-import { BEATS, ODO_TARGET } from '@/components/tour/data';
+import JsonLd, { breadcrumbs } from '@/components/JsonLd';
+import { BEATS } from '@/components/tour/data';
 
 export const metadata: Metadata = {
-  title: 'The Journey — Denver to Miami',
+  title: 'The Exotic Tour — Denver to Miami',
   description:
-    'Scroll the drive. One built Audi S8, ten markets, ~5,000 miles — Drive Exotiq’s Denver-to-Miami exotic tour, summer into fall 2026. The wrap is still yours to claim.',
+    'One 2017 Audi S8, ten markets, 5,000 miles from Denver to Miami in 2026. Drive Exotiq’s exotic tour — seeking a wrap sponsor.',
   alternates: { canonical: '/tour' },
+};
+
+/**
+ * Safe structured data only: the ten market beats as an ItemList + breadcrumbs.
+ * No Event/EventSeries until real dates are confirmed — never fabricate dates.
+ */
+const TOUR_ITEM_LIST = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Drive Exotiq 2026 exotic tour — Denver to Miami, ten markets',
+  description:
+    'The ten market stops of the Drive Exotiq 2026 exotic tour, driven in one 2017 Audi S8, summer into fall 2026.',
+  numberOfItems: BEATS.length,
+  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  itemListElement: BEATS.map((beat) => ({
+    '@type': 'ListItem',
+    position: beat.leg,
+    name: beat.name,
+    url: `https://driveexotiq.com/tour#${beat.id}`,
+  })),
 };
 
 /**
@@ -22,6 +43,8 @@ export const metadata: Metadata = {
 export default function TourPage() {
   return (
     <>
+      <JsonLd data={breadcrumbs([{ name: 'The Tour', path: '/tour' }])} />
+      <JsonLd data={TOUR_ITEM_LIST} />
       <Header />
       <TourBackground />
 
@@ -39,8 +62,13 @@ export default function TourPage() {
               Before first light, in Denver, the engine is already warm.
             </h1>
             <p className="mt-7 max-w-[52ch] text-[clamp(1rem,1.6vw,1.2rem)] leading-snug text-ink-2">
-              One car, ten markets, ~5,000 miles — Drive Exotiq&rsquo;s
-              Denver-to-Miami exotic tour, summer into fall 2026.
+              One 2017 Audi S8, ten markets, ~5,000 miles — Drive
+              Exotiq&rsquo;s Denver-to-Miami exotic tour, summer into fall
+              2026.
+            </p>
+            <p className="mt-4 max-w-[56ch] text-[14px] leading-relaxed text-ink-3">
+              Drive Exotiq is the community front door to the exotiq.rent
+              exotic-car marketplace.
             </p>
             <p className="mt-5 font-serif text-[clamp(1.1rem,2vw,1.5rem)] italic text-ink-3">
               a long way south, the long way.
@@ -99,7 +127,7 @@ export default function TourPage() {
               id="tour-finale"
               className="mx-auto mt-5 max-w-[18ch] font-display text-[clamp(2.6rem,8vw,5rem)] font-semibold leading-[0.94] tracking-tightest text-ink"
             >
-              Ten cities. Thousands of miles. One blank canvas.
+              5,000 miles. Ten cities. One blank canvas.
             </h2>
             <p className="mx-auto mt-6 max-w-[44ch] text-[clamp(1rem,1.6vw,1.15rem)] leading-snug text-ink-2">
               This is the car. This is the route. The wrap is still yours to claim.
@@ -119,7 +147,7 @@ export default function TourPage() {
               </Link>
             </div>
             <p className="mt-10 text-[12px] tabular-nums tracking-[0.1em] text-ink-3">
-              {ODO_TARGET.toLocaleString()} miles · {BEATS.length} markets · one car
+              ~5,000 tour miles · ten markets · one car
             </p>
           </div>
         </section>

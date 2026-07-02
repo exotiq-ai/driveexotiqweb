@@ -4,17 +4,26 @@ import Link from 'next/link';
 
 interface SmsConsentCheckboxesProps {
   register: (name: 'smsTransactionalConsent' | 'smsMarketingConsent') => Record<string, unknown>;
-  variant?: 'dark' | 'light';
+  /** 'de' = the redesign token skin; 'dark'/'light' are the legacy booking skins. */
+  variant?: 'dark' | 'light' | 'de';
 }
 
 export default function SmsConsentCheckboxes({
   register,
   variant = 'dark',
 }: SmsConsentCheckboxesProps) {
-  const textColor = variant === 'dark' ? 'text-metallic-silver/70' : 'text-gray-600';
-  const linkColor = variant === 'dark' ? 'text-gulf-blue hover:text-gulf-blue/80' : 'text-gulf-blue hover:text-gulf-blue/80';
-  const checkboxBg = variant === 'dark' ? 'bg-graphite border-metallic-silver/30' : 'bg-white border-gray-300';
-  const labelColor = variant === 'dark' ? 'text-metallic-silver/60' : 'text-gray-500';
+  const textColor =
+    variant === 'de' ? 'text-ink-3' : variant === 'dark' ? 'text-metallic-silver/70' : 'text-gray-600';
+  const linkColor =
+    variant === 'de' ? 'text-gulf hover:text-gulf-2' : 'text-gulf-blue hover:text-gulf-blue/80';
+  const checkboxBg =
+    variant === 'de'
+      ? 'bg-surface border-line-2'
+      : variant === 'dark'
+        ? 'bg-graphite border-metallic-silver/30'
+        : 'bg-white border-gray-300';
+  const labelColor =
+    variant === 'de' ? 'text-ink-3' : variant === 'dark' ? 'text-metallic-silver/60' : 'text-gray-500';
 
   return (
     <div className="space-y-3">
